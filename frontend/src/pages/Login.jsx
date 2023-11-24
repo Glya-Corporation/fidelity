@@ -22,7 +22,7 @@ const Login = () => {
         <Form.Control className='input' {...register('password')} type='password' placeholder='Contraseña' />
       </Form.Group>
       <Form.Group className='mb-3'>
-        <Form.Check type='checkbox' label='Recuerdame' />
+        <Form.Check {...register('check')} type='checkbox' label='Recuerdame' />
       </Form.Group>
       <Button variant='success' type='submit'>
         Login
