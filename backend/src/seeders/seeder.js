@@ -1,20 +1,16 @@
-
-const db = require("../utils/database");
-const initModels = require("../models/initModels");
-const { } = require("../models");
+const db = require('../utils/database');
+const initModels = require('../models/initModels');
+const { Categories, Products } = require('../models');
+const { categories, pulpoCoin } = require('./data.js');
 
 initModels();
 
-const users = [
-    { },
-    { },
-]
-
 db.sync({ force: true })
-    .then(() => {
-        console.log("Iniciando la plantación de Información");
-        
-        setTimeout(() => users.forEach(user => Users.create(user)), 1000);
-    })
-    .then(() => console.log("Implantation complete"))
-    .catch((error) => console.log(error))
+  .then(() => {
+    console.log('Iniciando la plantación de Información');
+
+    setTimeout(() => categories.forEach(category => Categories.create(category)), 1000);
+    setTimeout(() => pulpoCoin.forEach(product => Products.create(product)), 2000);
+  })
+  .then(() => console.log('Implantation complete'))
+  .catch(error => console.log(error));

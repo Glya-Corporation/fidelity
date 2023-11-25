@@ -1,11 +1,10 @@
-const db = require('../utils/database.js')
-
-const {DataTypes} = require('sequialize')
+const db = require('../utils/database.js');
+const { DataTypes } = require('sequelize');
 
 const Products = db.define('products', {
   id: {
     type: DataTypes.INTEGER,
-    primarykey: true,
+    primaryKey: true,
     autoIncrement: true,
     allowNull: false
   },
@@ -14,8 +13,7 @@ const Products = db.define('products', {
     allowNull: false
   },
   img: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: DataTypes.STRING
   },
   price: {
     type: DataTypes.FLOAT,
@@ -25,6 +23,11 @@ const Products = db.define('products', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  categoryId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'category_id'
+  },
   container: {
     type: DataTypes.INTEGER,
     allowNull: true
@@ -33,6 +36,6 @@ const Products = db.define('products', {
     type: DataTypes.INTEGER,
     allowNull: false
   }
-})
+});
 
 module.exports = Products;

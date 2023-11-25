@@ -1,4 +1,16 @@
 {
+  "name": "fidelity",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Luis Uzcategui",
+  "license": "ISC",
+  "description": "",
+  "main": "ecosystem.config.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "seeder": "node ./src/seeders/seeder.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",

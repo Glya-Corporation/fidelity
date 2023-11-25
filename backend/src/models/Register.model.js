@@ -14,7 +14,13 @@ const Register = db.define('register', {
   },
   userId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    field: 'user_id'
+  },
+  productId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'product_id'
   }
 });
 
