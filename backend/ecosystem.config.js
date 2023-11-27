@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: 'parejas',
+    name: 'fidelity',
     script: './src/server.js',
     watch: true,
     env_file: ".env.custom",
