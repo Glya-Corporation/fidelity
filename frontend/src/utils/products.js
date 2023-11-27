@@ -870,7 +870,7 @@ export default products = [
     price: 8,
     description: 'Camarón y Concha',
     category: 7,
-    container: ''
+    container: 2
   },
   {
     id: 98,

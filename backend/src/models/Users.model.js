@@ -32,7 +32,8 @@ const Users = db.define(
     },
     coin: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0
     }
   },
   {
