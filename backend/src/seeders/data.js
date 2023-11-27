@@ -741,7 +741,7 @@ const products = [
     price: 8,
     description: 'Camarón y Concha',
     categoryId: 7,
-    container: ''
+    container: 2
   },
   {
     name: 'Tallarín Marinero',
