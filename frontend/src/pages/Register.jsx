@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form'
 
+import {Button} from 'react-bootstrap'
+
 const Register = () => {
   const { handlSubmit, register, reset } = useForm();
   
@@ -10,6 +12,7 @@ const Register = () => {
       <input {...register('email')} type='email' placeholder='Correo'/>
       <input {...register('password')} type='password' placeholder='Contraseña'/>
       <input {...register('verifyPassword')} type='password' placeholder='Repetir contraseña'/>
+      <Button variant='success'>Registrar</Button>
     </form>  
   )
 }
