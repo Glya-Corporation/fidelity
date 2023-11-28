@@ -29,11 +29,6 @@ const Users = db.define(
     password: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    coin: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
     }
   },
   {

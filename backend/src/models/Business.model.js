@@ -1,7 +1,7 @@
 const db = require('../utils/database');
 const { DataTypes } = require('sequelize');
 
-const Categories = db.define('categories', {
+const Business = db.define('business', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -14,4 +14,4 @@ const Categories = db.define('categories', {
   }
 });
 
-module.exports = Categories;
+module.exports = Business;
