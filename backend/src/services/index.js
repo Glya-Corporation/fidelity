@@ -1,5 +1,4 @@
+const UserServices = require('./User.services.js');
 
-const nameData = require('./');
 
-
-module.exports = { allConsts };
+module.exports = { UserServices };

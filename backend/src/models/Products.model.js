@@ -35,7 +35,13 @@ const Products = db.define('products', {
   },
   coinValue: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    field: 'coin_value'
+  },
+  businessId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'business_id'
   }
 });
 

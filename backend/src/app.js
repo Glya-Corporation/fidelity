@@ -4,6 +4,7 @@ const cors = require('cors');
 const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
 const initModels = require('./models/initModels.js');
+const { UsersRoutes } = require('./routes/index.js');
 
 const app = express();
 
@@ -24,6 +25,8 @@ db.sync({ force: false, alter: true })
 app.get('/', (req, res) => {
   console.log('Bienvenido al server');
 });
+
+app.use('/api/v1', UsersRoutes);
 
 app.use(hendleError);
 

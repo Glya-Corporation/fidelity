@@ -11,6 +11,11 @@ const Categories = db.define('categories', {
   name: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  businessId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'business_id'
   }
 });
 

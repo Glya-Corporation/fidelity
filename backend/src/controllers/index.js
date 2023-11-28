@@ -1,5 +1,3 @@
+const { createUser, getUser, getAllUserByBusinessId, updateUser, deleteUser } = require('./users.controllers.js');
 
-const nameData = require('./');
-
-
-module.exports = { allConsts };
+module.exports = { createUser, getUser, getAllUserByBusinessId, updateUser, deleteUser };

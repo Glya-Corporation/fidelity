@@ -8,17 +8,19 @@ const UsersBusiness = db.define('users_business', {
     autoIncrement: true,
     allowNull: false
   },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   userId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    field: 'user_id'
   },
   businessId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    field: 'business_id'
+  },
+  coin: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0
   }
 });
 

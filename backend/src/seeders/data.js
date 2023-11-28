@@ -1,4 +1,16 @@
-const categories = [{ name: 'Platos de la Casa' }, { name: 'Arroces' }, { name: 'Broaster y Secos' }, { name: 'Ceviches' }, { name: 'Encebollados' }, { name: 'Mariscos' }, { name: 'Sopas' }, { name: 'Desayunos' }, { name: 'Cangrejadas' }];
+const business = [{ name: 'Pulpo Marinero' }];
+
+const categories = [
+  { name: 'Platos de la Casa', businessId: 1 },
+  { name: 'Arroces', businessId: 1 },
+  { name: 'Broaster y Secos', businessId: 1 },
+  { name: 'Ceviches', businessId: 1 },
+  { name: 'Encebollados', businessId: 1 },
+  { name: 'Mariscos', businessId: 1 },
+  { name: 'Sopas', businessId: 1 },
+  { name: 'Desayunos', businessId: 1 },
+  { name: 'Cangrejadas', businessId: 1 }
+];
 
 const products = [
   {
@@ -7,7 +19,8 @@ const products = [
     price: 21,
     description: 'Para dos o tres personas',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Paella Mar y Tierra',
@@ -15,7 +28,8 @@ const products = [
     price: 23,
     description: 'Plato para dos o más',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Bandera Marinera',
@@ -23,7 +37,8 @@ const products = [
     price: 19,
     description: 'Plato para dos o más',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Parrillada Mar y Tierra',
@@ -31,7 +46,8 @@ const products = [
     price: 21,
     description: 'Plato para dos o más',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pollo, Carne, Chancho, Chorizo',
@@ -39,7 +55,8 @@ const products = [
     price: 11,
     description: 'Plato para dos o más',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Chuleta a la Plancha',
@@ -47,7 +64,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Carne a la Plancha',
@@ -55,7 +73,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Carne Asada de Chancho',
@@ -63,7 +82,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Carne Asada',
@@ -71,7 +91,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pollo a la Plancha',
@@ -79,7 +100,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Churrasco',
@@ -87,7 +109,8 @@ const products = [
     price: 6.5,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Lomo Salteado',
@@ -95,7 +118,8 @@ const products = [
     price: 5.5,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Carne Apanada',
@@ -103,21 +127,24 @@ const products = [
     price: 6,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Bistec de Carne',
     price: 5.5,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Carne con Champiñones',
     price: 6.5,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pollo con Champiñones',
@@ -125,7 +152,8 @@ const products = [
     price: 6.5,
     description: 'Plato Completo',
     categoryId: 1,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz con Camarón',
@@ -133,14 +161,16 @@ const products = [
     price: 8.5,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz con Concha',
     price: 7.5,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz Mixto',
@@ -148,7 +178,8 @@ const products = [
     price: 9,
     description: 'Camarón y Concha',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz con Pulpo',
@@ -156,7 +187,8 @@ const products = [
     price: 7.5,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz Marinero',
@@ -164,7 +196,8 @@ const products = [
     price: 12,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz Mixto Especial',
@@ -172,21 +205,24 @@ const products = [
     price: 11,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz Marinero con Langostinos',
     price: 19,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz con Calamar',
     price: 7.5,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Chaulafan',
@@ -194,14 +230,16 @@ const products = [
     price: 9,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Arroz con Pollo',
     price: 7,
     description: 'Plato Completo',
     categoryId: 2,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pollo Broaster',
@@ -209,7 +247,8 @@ const products = [
     price: 3.5,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Seco de Pollo',
@@ -217,7 +256,8 @@ const products = [
     price: 3.5,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Seco de Carne',
@@ -225,7 +265,8 @@ const products = [
     price: 3.5,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Guata',
@@ -233,7 +274,8 @@ const products = [
     price: 3.5,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Mixto Pollo y Carne',
@@ -241,7 +283,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Mixto Pollo y Guata',
@@ -249,7 +292,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Mixto Carne y Guata',
@@ -257,7 +301,8 @@ const products = [
     price: 4.75,
     description: 'Bandera Doble',
     categoryId: 3,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Pollo, Carne y Guata',
@@ -265,7 +310,8 @@ const products = [
     price: 6.25,
     description: 'Bandera Criolla',
     categoryId: 3,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Broaster + Guata',
@@ -273,7 +319,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Broaster + Carne',
@@ -281,7 +328,8 @@ const products = [
     price: 4.75,
     description: 'Plato Completo',
     categoryId: 3,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Ceviche de Camarón',
@@ -289,7 +337,8 @@ const products = [
     price: 7,
     description: 'Incluye Cangíl y Tostado',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ceviche de Concha',
@@ -297,7 +346,8 @@ const products = [
     price: 7,
     description: 'Incluye Cangíl y Tostado',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ceviche Marinero',
@@ -305,7 +355,8 @@ const products = [
     price: 9,
     description: 'Incluye Cangíl y Tostado',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ceviche Mixto',
@@ -313,7 +364,8 @@ const products = [
     price: 8,
     description: 'Camarón, Concha y Calamar',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ceviche de Corvina',
@@ -321,7 +373,8 @@ const products = [
     price: 6,
     description: 'Incluye Cangíl y Tostado',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ceviche Peruano',
@@ -329,7 +382,8 @@ const products = [
     price: 9,
     description: 'Incluye Cangíl y Tostado',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ceviche de Pulpo',
@@ -337,7 +391,8 @@ const products = [
     price: 6,
     description: 'Incluye Cangíl y Tostado',
     categoryId: 4,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Bandera Típica #1',
@@ -345,14 +400,16 @@ const products = [
     price: 7.5,
     description: 'Guata + Encebollado + Cev. Camarón',
     categoryId: 4,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Bandera Típica #2',
     price: 11.5,
     description: 'Guata + Encebollado + Cev. Camarón + Cev. Concha',
     categoryId: 4,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Mar y Tierra con Encebollado',
@@ -360,14 +417,16 @@ const products = [
     price: 5.5,
     description: 'Seco de Carne + Encebollado',
     categoryId: 4,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Mar y Tierra con Ceviche',
     price: 6.5,
     description: 'Seco de Carne + Ceviche',
     categoryId: 4,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Encebollado',
@@ -375,7 +434,8 @@ const products = [
     price: 2.5,
     description: 'Incluye Cangil y Tostado',
     categoryId: 5,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Encebollado con Camarón',
@@ -383,7 +443,8 @@ const products = [
     price: 5.5,
     description: 'Incluye Cangil y Tostado',
     categoryId: 5,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Encebollado con Concha',
@@ -391,7 +452,8 @@ const products = [
     price: 5.5,
     description: 'Incluye Cangil y Tostado',
     categoryId: 5,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Encebollado Triple',
@@ -399,7 +461,8 @@ const products = [
     price: 7,
     description: 'Incluye Cangil y Tostado',
     categoryId: 5,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Encebollado Marinero',
@@ -407,7 +470,8 @@ const products = [
     price: 9,
     description: 'Incluye Cangil y Tostado',
     categoryId: 5,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Majarisco',
@@ -415,28 +479,32 @@ const products = [
     price: 10.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Ensalada de Pollo',
     price: 5,
     description: 'Limón o Mayonesa',
     categoryId: 6,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Ensalada de Camarón',
     price: 6.5,
     description: 'Limón y Mayonesa',
     categoryId: 6,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Maríscos al Ajillo',
     price: 10.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Encocado de Maríscos',
@@ -444,35 +512,40 @@ const products = [
     price: 10.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sudado de Maríscos',
     price: 10.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Chicharrón de Maríscos',
     price: 10,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Chicharrón de Corvina',
     price: 6,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Libra de Camarones',
     price: 15.5,
     description: 'Arroz, Patacones y Ensalada',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Camarones Apanados',
@@ -480,14 +553,16 @@ const products = [
     price: 8,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Camarones Reventados',
     price: 8,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Encocado de Camarón',
@@ -495,14 +570,16 @@ const products = [
     price: 8,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sango de Camarón',
     price: 8,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Camarones al Ajillo',
@@ -510,7 +587,8 @@ const products = [
     price: 8,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tortilla de Camarón',
@@ -518,7 +596,8 @@ const products = [
     price: 8.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Corvina Apanada',
@@ -526,7 +605,8 @@ const products = [
     price: 7.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Corvina Frita',
@@ -534,7 +614,8 @@ const products = [
     price: 7.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Corvina al Vapor',
@@ -542,7 +623,8 @@ const products = [
     price: 7.5,
     description: 'Arroz, Verduras y Patacones',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Corvina en Salsa',
@@ -550,35 +632,40 @@ const products = [
     price: 12.5,
     description: 'Salsa de Maríscos',
     categoryId: 6,
-    container: 3
+    container: 3,
+    businessId: 1
   },
   {
     name: 'Enrollado de Corvina',
     price: 10.5,
     description: 'Con Camarón',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Langostinos al Ajillo',
     price: 12.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Langostinos Apanados',
     price: 12.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Langostinos a la Plancha',
     price: 12.5,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Conchas Asadas',
@@ -586,7 +673,8 @@ const products = [
     price: 10,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pescado Frito',
@@ -594,14 +682,16 @@ const products = [
     price: 9,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Encocado de Pescado',
     price: 9,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tapado de Pescado',
@@ -609,21 +699,24 @@ const products = [
     price: 9,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sudado de Pescado',
     price: 9,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sudado de Pescado',
     price: 14,
     description: 'Con Camarón',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pescado Frito en Salsa',
@@ -631,14 +724,16 @@ const products = [
     price: 16,
     description: 'Salsa de Maríscos',
     categoryId: 6,
-    container: 3
+    container: 3,
+    businessId: 1
   },
   {
     name: 'Sudado de Pescado',
     price: 16,
     description: 'Con Maíscos',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pulpo a la Parrilla',
@@ -646,7 +741,8 @@ const products = [
     price: 9,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Pulpo a la Parrilla',
@@ -654,14 +750,16 @@ const products = [
     price: 16,
     description: 'Salsa de Maríscos',
     categoryId: 6,
-    container: 3
+    container: 3,
+    businessId: 1
   },
   {
     name: 'Pulpo en Salsa de  Maríscos',
     price: 16,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 3
+    container: 3,
+    businessId: 1
   },
   {
     name: 'Pulpo al Ajillo',
@@ -669,21 +767,24 @@ const products = [
     price: 9,
     description: 'Plato Completo',
     categoryId: 6,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sopa Marinera',
     price: 11,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sopa de Camarón',
     price: 7,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sopa de Cangrejo',
@@ -691,28 +792,32 @@ const products = [
     price: 6.5,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Chupé de Pescado',
     price: 7,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Chupé de Camarón',
     price: 7,
     description: 'Café o Leche',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Parihuela',
     price: 11,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Cazuela de Maríscos',
@@ -720,28 +825,32 @@ const products = [
     price: 8,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Cazuela de Camarón',
     price: 7,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Cazuela de Pescado',
     price: 7,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Cazuela Mixta',
     price: 8,
     description: 'Camarón y Concha',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tallarín Marinero',
@@ -749,7 +858,8 @@ const products = [
     price: 8.5,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tallarín con Camarón',
@@ -757,7 +867,8 @@ const products = [
     price: 7.5,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tallarín Especial',
@@ -765,21 +876,24 @@ const products = [
     price: 8.5,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tallarín con Pollo',
     price: 6,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tallarín con Carne',
     price: 6,
     description: 'Plato Completo',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Chop Suey',
@@ -787,7 +901,8 @@ const products = [
     price: 9.5,
     description: 'Incluye Porción de Arroz',
     categoryId: 7,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tigrillo',
@@ -795,7 +910,8 @@ const products = [
     price: 3.75,
     description: 'Café y Jugo del Seco de Carne',
     categoryId: 8,
-    container: 1
+    container: 1,
+    businessId: 1
   },
   {
     name: 'Tigrillo con Seco de Carne',
@@ -803,7 +919,8 @@ const products = [
     price: 5.25,
     description: 'Incluye Café',
     categoryId: 8,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tigrillo con Seco de Pollo',
@@ -811,7 +928,8 @@ const products = [
     price: 5.5,
     description: 'Incluye Café',
     categoryId: 8,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Tigrillo con Guata',
@@ -819,21 +937,24 @@ const products = [
     price: 5.25,
     description: 'Incluye Café',
     categoryId: 8,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Bolón de queso',
     price: 5.5,
     description: 'Bolón + Bistec + Huevo + café',
     categoryId: 8,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Dos Huevo + Pan con Queso',
     price: 3.5,
     description: 'Café o Leche',
     categoryId: 8,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Combo de Cangrejo',
@@ -841,7 +962,8 @@ const products = [
     price: 20,
     description: '4 Cangrejos',
     categoryId: 9,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Encocado de Cangrejo',
@@ -849,24 +971,27 @@ const products = [
     price: 7.5,
     description: '1 Cangrejo',
     categoryId: 9,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Sudado de Cangrejo',
     price: 7.5,
     description: '1 Cangrejo',
     categoryId: 9,
-    container: 2
+    container: 2,
+    businessId: 1
   },
   {
     name: 'Cangrejo Solo',
     price: 5,
     description: 'Con Ensalada y Patacones',
     categoryId: 9,
-    container: 1
+    container: 1,
+    businessId: 1
   }
 ];
 
 const pulpoCoin = products.map(element => ({ ...element, coinValue: Math.ceil(element.price * (element.price >= 19 ? 15 : 10)) }));
 
-module.exports = { categories, pulpoCoin };
+module.exports = { categories, pulpoCoin, business };
