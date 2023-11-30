@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
 const initModels = require('./models/initModels.js');
-const { UsersRoutes } = require('./routes/index.js');
+const { UsersRoutes, ProductsRoutes } = require('./routes/index.js');
 
 const app = express();
 
@@ -18,7 +18,7 @@ db.authenticate()
 
 initModels();
 
-db.sync({ force: false, alter: true })
+db.sync({ force: true })
   .then(() => console.log('Synchronized database'))
   .catch(error => console.log(error));
 
@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1', UsersRoutes);
+app.use('/api/v1', ProductsRoutes);
 
 app.use(hendleError);
 

@@ -1,9 +1,9 @@
-const { UserServices } = require('../services');
+const { ProductServices } = require('../services');
 
-const createUser = async (req, res, next) => {
+const createProduct = async (req, res, next) => {
   try {
     const body = req.body;
-    const result = await UserServices.create(body);
+    const result = await ProductServices.create(body);
     res.status(201).json(result);
   } catch (error) {
     next({
@@ -14,10 +14,10 @@ const createUser = async (req, res, next) => {
   }
 };
 
-const getUser = async (req, res, next) => {
+const getProduct = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await UserServices.getById(id);
+    const result = await ProductServices.getById(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -28,10 +28,10 @@ const getUser = async (req, res, next) => {
   }
 };
 
-const getAllUserByBusinessId = async (req, res, next) => {
+const getAllProductByBusinessId = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await UserServices.getByBusinessId(id);
+    const result = await ProductServices.getByBusinessId(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -42,11 +42,11 @@ const getAllUserByBusinessId = async (req, res, next) => {
   }
 };
 
-const updateUser = async (req, res, next) => {
+const updateProduct = async (req, res, next) => {
   try {
     const id = req.params.id;
     const body = req.body;
-    const result = await UserServices.updateUser(id, body);
+    const result = await ProductServices.updateProduct(id, body);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -57,10 +57,10 @@ const updateUser = async (req, res, next) => {
   }
 };
 
-const deleteUser = async (req, res, next) => {
+const deleteProduct = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await UserServices.deleteUser(id);
+    const result = await ProductServices.deleteProduct(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -71,4 +71,5 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
-module.exports = { createUser, getUser, getAllUserByBusinessId, updateUser, deleteUser };
+module.exports = { createProduct, getProduct, getAllProductByBusinessId, updateProduct, deleteProduct };
+
