@@ -1,9 +1,9 @@
-const { Users } = require('../models');
+const { Products } = require('../models');
 
-class UserServices {
+class ProductServices {
   static async create(body) {
     try {
-      const result = await Users.create(body);
+      const result = await Products.create(body);
       return result;
     } catch (error) {
       throw error;
@@ -11,7 +11,7 @@ class UserServices {
   }
   static async getById(id) {
     try {
-      const result = await Users.findByPk(id);
+      const result = await Products.findByPk(id);
       return result;
     } catch (error) {
       throw error;
@@ -19,23 +19,23 @@ class UserServices {
   }
   static async getAllByBusinessId(businessId) {
     try {
-      const result = await Users.findAll({ where: { businessId } });
+      const result = await Products.findAll({ where: { businessId } });
       return result;
     } catch (error) {
       throw error;
     }
   }
-  static async updateUser(id, body) {
+  static async updateProduct(id, body) {
     try {
-      const result = await Users.update(body, { where: { id } });
+      const result = await Products.update(body, { where: { id } });
       return { message: 'Usuario eliminado' };
     } catch (error) {
       throw error;
     }
   }
-  static async deleteUser(id) {
+  static async deleteProduct(id) {
     try {
-      const result = await Users.destroy({ where: { id } });
+      const result = await Products.destroy({ where: { id } });
       return { message: 'Usuario eliminado' }
     } catch (error) {
       throw error;
@@ -43,4 +43,4 @@ class UserServices {
   }
 }
 
-module.exports = UserServices;
+module.exports = ProductServices;
