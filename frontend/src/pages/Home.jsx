@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux';
 import coinPng from '../assets/PULPO_COIN.png';
 
 import QRCode from 'qrcode.react';
+import { Button } from 'react-bootstrap';
 
 const Home = () => {
   const user = { id: 1, name: 'Luis', surname: 'Uzcategui', coin: 25 }; //useSelector(state => state.user);
   return (
     <div className='home'>
-      <img src={''} alt='Logo' />
+      <img src={''} alt='Logo' className='logo' />
       <div className='cart'>
         <h3>
           {user.name} {user.surname}
@@ -19,7 +20,9 @@ const Home = () => {
           <p>{user.coin}</p>
         </div>
       </div>
-      <button className='btn-canje'>Canjear</button>
+      <Button variant='success' className='btn-canje'>
+        Canjear
+      </Button>
     </div>
   );
 };

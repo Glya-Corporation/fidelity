@@ -63,3 +63,16 @@ Form {
 .coin p {
   font-size: 40px;
 }
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.btn-canje {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 1.5rem !important;
+}

@@ -4,6 +4,7 @@ import ProtectedRoutes from './components/ProtectedRoutes.jsx';
 
 import Login from './pages/Login.jsx';
 import Home from './pages/Home.jsx';
+import Register from './pages/Register.jsx';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path='/login' element={<Login />} />
+        <Route path='/register/:id' element={<Register />} />
         <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Home />} />
         </Route>

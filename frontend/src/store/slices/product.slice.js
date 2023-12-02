@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import getConfig from '../../util/getConfig';
+import apiUrl from '../../utils/apiUrl.js';
+import getConfig from '../../utils/getConfig.js';
 
-import apiUrl from '../../util/apiUrl.js';
-
-export const productSlice = createSlice({
-  name: 'products',
+export const productsliceSlice = createSlice({
+  name: 'product',
   initialState: [],
   reducers: {
     setProducts: (state, actions) => {
@@ -23,6 +22,6 @@ export const getProductsThunk = id => dispatch => {
     .catch(err => console.error(err));
 };
 
-export const { productSlice } = productSlice .actions;
+export const { setProducts } = productsliceSlice.actions;
 
-export default productSlice.reducer;
+export default productsliceSlice.reducer;

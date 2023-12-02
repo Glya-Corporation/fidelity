@@ -1,21 +1,41 @@
-import { useForm } from 'react-hook-form'
-
-import {Button} from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Register = () => {
-  const { handlSubmit, register, reset } = useForm();
-  
+  const { handleSubmit, register, reset } = useForm();
+
+  const { id } = useParams();
+
+  const navigate = useNavigate();
+
+  const submit = data => {
+    console.log(data);
+    localStorage.setItem('user', JSON.stringify({ ...data, businessId: id }));
+    navigate('/');
+  };
+
   return (
-    <form onSubmit={handlSubmit(submit)}>
-      <input type='text' placeholder='Nombres' {...register('name')}/>
-      <input {...register('surname')}
-      type='text' placeholder='Apellidos'/>
-      <input {...register('email')} type='email' placeholder='Correo'/>
-      <input {...register('password')} type='password' placeholder='Contraseña'/>
-      <input {...register('verifyPassword')} type='password' placeholder='Repetir contraseña'/>
-      <Button variant='success'>Registrar</Button>
-    </form>  
-  )
-}
+    <Form onSubmit={handleSubmit(submit)}>
+      <h3 className='mb-5'>Registrate</h3>
+      <Form.Group className='mb-2'>
+        <Form.Control type='text' placeholder='Nombres' {...register('name')} />
+      </Form.Group>
+      <Form.Group className='mb-2'>
+        <Form.Control {...register('surname')} type='text' placeholder='Apellidos' />
+      </Form.Group>
+      <Form.Group className='mb-2'>
+        <Form.Control {...register('email')} type='email' placeholder='Correo' />
+      </Form.Group>
+      <Form.Group className='mb-2'>
+        <Form.Control className='mb-1' {...register('password')} type='password' placeholder='Contraseña' />
+        <Form.Control className='mb-1' {...register('verifyPassword')} type='password' placeholder='Repetir contraseña' />
+      </Form.Group>
+      <Button type='submit' variant='success'>
+        Registrar
+      </Button>
+    </Form>
+  );
+};
 
 export default Register;
