@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx';
 import Register from './pages/Register.jsx';
 
 import './App.css';
+import ListProsucts from './pages/ListProducts.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/register/:id' element={<Register />} />
         <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Home />} />
+          <Route path='/list' element={<ListProsucts />} />
         </Route>
       </Routes>
     </HashRouter>

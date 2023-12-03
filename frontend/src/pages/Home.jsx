@@ -5,10 +5,15 @@ import coinPng from '../assets/PULPO_COIN.png';
 import QRCode from 'qrcode.react';
 import { Button } from 'react-bootstrap';
 
+import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
   const user = { id: 1, name: 'Luis', surname: 'Uzcategui', coin: 25 }; //useSelector(state => state.user);
+
+  const navigate = useNavigate();
+
   return (
-    <div className='home'>
+    <main className='home background'>
       <img src={''} alt='Logo' className='logo' />
       <div className='cart'>
         <h3>
@@ -20,10 +25,10 @@ const Home = () => {
           <p>{user.coin}</p>
         </div>
       </div>
-      <Button variant='success' className='btn-canje'>
+      <Button variant='success' className='btn-canje' onClick={() => navigate('list')}>
         Canjear
       </Button>
-    </div>
+    </main>
   );
 };
 
