@@ -17,7 +17,7 @@ class ProductServices {
       throw error;
     }
   }
-  static async getAllByBusinessId(businessId) {
+  static async getAllProductByBusinessId(businessId) {
     try {
       const result = await Products.findAll({ where: { businessId } });
       return result;
@@ -36,7 +36,7 @@ class ProductServices {
   static async deleteProduct(id) {
     try {
       const result = await Products.destroy({ where: { id } });
-      return { message: 'Usuario eliminado' }
+      return { message: 'Usuario eliminado' };
     } catch (error) {
       throw error;
     }

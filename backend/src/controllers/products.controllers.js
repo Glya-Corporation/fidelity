@@ -31,7 +31,7 @@ const getProduct = async (req, res, next) => {
 const getAllProductByBusinessId = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await ProductServices.getByBusinessId(id);
+    const result = await ProductServices.getAllProductByBusinessId(id);
     res.status(200).json(result);
   } catch (error) {
     next({
