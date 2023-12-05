@@ -1,4 +1,4 @@
-export default products = [
+const products = [
   {
     id: 1,
     name: 'Plato de la Casa',
@@ -1017,3 +1017,5 @@ export default products = [
     container: 1
   }
 ];
+
+export default products;

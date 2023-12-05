@@ -16,18 +16,30 @@ img {
 }
 
 Form {
-  width: 100vw;
-  height: 100vh;
-  padding: 2rem;
+  width: 80%;
+  height: max-content;
+  padding: 6rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff95;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px var(--primry);
+}
+
+form input {
+  border: 1px solid #00000050 !important;
+  box-shadow: inset 5px 5px 5px #00000050;
 }
 
 main {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .mb-3 {

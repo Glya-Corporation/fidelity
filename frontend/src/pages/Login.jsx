@@ -14,20 +14,22 @@ const Login = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(login)}>
-      <Form.Group className='mb-3'>
-        <Form.Control className='input' {...register('email')} type='email' placeholder='Correo' />
-      </Form.Group>
-      <Form.Group className='mb-3'>
-        <Form.Control className='input' {...register('password')} type='password' placeholder='Contraseña' />
-      </Form.Group>
-      <Form.Group className='mb-3'>
-        <Form.Check {...register('check')} type='checkbox' label='Recuerdame' />
-      </Form.Group>
-      <Button variant='success' type='submit'>
-        Login
-      </Button>
-    </Form>
+    <main className='background'>
+      <Form onSubmit={handleSubmit(login)}>
+        <Form.Group className='mb-3'>
+          <Form.Control className='input' {...register('email')} type='email' placeholder='Correo' />
+        </Form.Group>
+        <Form.Group className='mb-3'>
+          <Form.Control className='input' {...register('password')} type='password' placeholder='Contraseña' />
+        </Form.Group>
+        <Form.Group className='mb-3'>
+          <Form.Check {...register('check')} type='checkbox' label='Recuerdame' />
+        </Form.Group>
+        <Button variant='success' type='submit'>
+          Login
+        </Button>
+      </Form>
+    </main>
   );
 };
 
