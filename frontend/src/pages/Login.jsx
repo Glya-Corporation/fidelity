@@ -11,7 +11,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const login = data => {
+  export const login = data => {
     axios.post(`${apiUrl}/login`, data)
       .then(res => {
         console.log(res.data);
