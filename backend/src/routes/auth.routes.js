@@ -47,8 +47,6 @@ const router = Router();
 *               password: "123123"
 */
 
-router.post('/login/client', login);
-
-router.post('/login/business', login);
+router.post('/login', login);
 
 module.exports = router;

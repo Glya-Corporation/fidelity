@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
 const initModels = require('./models/initModels.js');
-const { UsersRoutes, ProductsRoutes } = require('./routes/index.js');
+const { AuthRoutes, UsersRoutes, ProductsRoutes } = require('./routes/index.js');
 
 const app = express();
 
@@ -23,9 +23,10 @@ db.sync({ force: false, alter: true })
   .catch(error => console.log(error));
 
 app.get('/', (req, res) => {
-  console.log('Bienvenido al server');
+  res.status(200).json({name: 'fidelity'})
 });
 
+app.use('/api/v1', AuthRoutes);
 app.use('/api/v1', UsersRoutes);
 app.use('/api/v1', ProductsRoutes);
 
