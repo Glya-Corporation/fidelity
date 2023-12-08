@@ -3,27 +3,19 @@ import { useForm } from 'react-hook-form';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-import axios from 'axios'
-import apiUrl from '../utils/apiUrl.js'
-
 const Login = () => {
   const { handleSubmit, register, reset } = useForm();
 
   const navigate = useNavigate();
 
-  export const login = data => {
-    axios.post(`${apiUrl}/login`, data)
-      .then(res => {
-        console.log(res.data);
-        localStorage.setItem('user', JSON.stringify(res.data.user))
-        localStorage.setItem('token', JSON.stringify(res.data.token))
-        navigate('/');
-      })
+  const login = data => {
+    localStorage.setItem('token', JSON.stringify(data));
+    navigate('/');
   };
 
   return (
     <main className='background'>
-      <Form onSubmit={handleSubmit(login)}>
+      <Form onSubmit={handleSubmit(login)} className='form'>
         <Form.Group className='mb-3'>
           <Form.Control className='input' {...register('email')} type='email' placeholder='Correo' />
         </Form.Group>

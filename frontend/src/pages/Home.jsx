@@ -25,7 +25,7 @@ const Home = () => {
           <p>{user.coin}</p>
         </div>
       </div>
-      <Button variant='success' className='btn-canje' onClick={() => navigate('list')}>
+      <Button variant='success' className='btn-canje' onClick={() => navigate('/list')}>
         Canjear
       </Button>
     </main>

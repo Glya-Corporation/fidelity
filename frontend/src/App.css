@@ -15,7 +15,7 @@ img {
   height: 100%;
 }
 
-Form {
+.form {
   width: 80%;
   height: max-content;
   padding: 6rem 1rem;
@@ -28,7 +28,7 @@ Form {
   box-shadow: 0 0 15px var(--primry);
 }
 
-form input {
+.form input {
   border: 1px solid #00000050 !important;
   box-shadow: inset 5px 5px 5px #00000050;
 }
@@ -65,7 +65,7 @@ main {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  background-color: #e0e0e0;
+  background-color: #e0e0e095;
   border-radius: 0.5rem;
   box-shadow: 0 0 15px var(--primry);
 }
@@ -109,8 +109,40 @@ main {
   background-attachment: fixed;
 }
 
-@media screen and (min-width: "600px") {
-  Form {
-    width: 50%;
+.list-products {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 1rem;
+  gap: .5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow-y: auto;
+  justify-content: center;
+}
+
+.item-product {
+  padding: .5rem;
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff95;
+  border-radius: .5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.item-product img {
+  width: 95px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+@media only screen and ( min-width: 600px) {
+  .form {
+    width: 40% !important;
   }
 }

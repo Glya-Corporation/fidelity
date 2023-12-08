@@ -1,7 +1,7 @@
 const db = require('../utils/database');
 const initModels = require('../models/initModels');
-const { Categories, Products, Business, Roles } = require('../models');
-const { categories, pulpoCoin, business, roles } = require('./data.js');
+const { Categories, Products, Business } = require('../models');
+const { categories, pulpoCoin, business } = require('./data.js');
 
 initModels();
 
@@ -10,8 +10,6 @@ db.sync({ force: true })
     console.log('Iniciando la plantación de Información');
 
     business.forEach(business => Business.create(business));
-
-    roles.forEach(role => Roles.create(role));
 
     setTimeout(() => categories.forEach(category => Categories.create(category)), 1000);
     setTimeout(() => pulpoCoin.forEach(product => Products.create(product)), 2500);
