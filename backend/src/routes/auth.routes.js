@@ -5,7 +5,7 @@ const router = Router();
 
 /**
 * @openapi
-* /api/v1/login/client:
+* /api/v1/login:
 *   post:
 *     summary: Login
 *     tags: [Auth]
