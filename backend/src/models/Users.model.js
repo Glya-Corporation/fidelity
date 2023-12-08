@@ -29,6 +29,11 @@ const Users = db.define(
     password: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    roleId: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1,
+      field: 'role_id'
     }
   },
   {

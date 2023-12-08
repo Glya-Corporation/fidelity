@@ -1,5 +1,7 @@
 const business = [{ name: 'Pulpo Marinero' }];
 
+const roles = [{ name: 'client' }, { name: 'owner' }, { name: 'cashier' }];
+
 const categories = [
   { name: 'Platos de la Casa', businessId: 1 },
   { name: 'Arroces', businessId: 1 },
@@ -994,4 +996,4 @@ const products = [
 
 const pulpoCoin = products.map(element => ({ ...element, coinValue: Math.ceil(element.price * (element.price >= 19 ? 15 : 10)) }));
 
-module.exports = { categories, pulpoCoin, business };
+module.exports = { categories, pulpoCoin, business, roles };

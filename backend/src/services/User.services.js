@@ -1,9 +1,11 @@
-const { Users } = require('../models');
+const { Users, UsersBusiness } = require('../models');
 
 class UserServices {
-  static async create(body) {
+  static async create(body, businessId) {
     try {
+      console.log({ body, businessId });
       const result = await Users.create(body);
+      await UsersBusiness.create({ userId: result.id, businessId });
       return result;
     } catch (error) {
       throw error;
@@ -36,7 +38,7 @@ class UserServices {
   static async deleteUser(id) {
     try {
       const result = await Users.destroy({ where: { id } });
-      return { message: 'Usuario eliminado' }
+      return { message: 'Usuario eliminado' };
     } catch (error) {
       throw error;
     }

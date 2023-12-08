@@ -4,7 +4,7 @@ const authenticate = require('../middlewares/auth.middleware');
 
 const router = Router();
 
-router.post('/user/create', authenticate, createUser);
+router.post('/register/:businessId', createUser);
 
 router.get('/user/:id', authenticate, getUser);
 

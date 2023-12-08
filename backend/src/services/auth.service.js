@@ -17,6 +17,7 @@ class AuthServices {
         const isValid = bcrypt.compareSync(password, result.password);
         return isValid ? result : isValid;
       } else {
+        throw 'Email error'
       }
     } catch (error) {
       throw error;
