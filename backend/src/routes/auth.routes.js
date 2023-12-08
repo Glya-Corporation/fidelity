@@ -25,26 +25,6 @@ const router = Router();
 *             example:
 *               email: "example@gmail.com"
 *               password: "123123"
-* /api/v1/login/business:
-*   post:
-*     summary: Login
-*     tags: [Auth]
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             type: object
-*             properties:
-*               email:
-*                 type: string
-*                 description: Email
-*               password:
-*                 type: string
-*                 description: Password
-*             example:
-*               email: "example@gmail.com"
-*               password: "123123"
 */
 
 router.post('/login', login);
