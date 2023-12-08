@@ -3,13 +3,22 @@ import { useForm } from 'react-hook-form';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+
+import apiUrl from '../utils/apiUrl.js';
+
 const Login = () => {
   const { handleSubmit, register, reset } = useForm();
 
   const navigate = useNavigate();
 
   const login = data => {
-    localStorage.setItem('token', JSON.stringify(data));
+    axios
+      .post(`${apiUrl}/login`, data)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.error(err));
     navigate('/');
   };
 

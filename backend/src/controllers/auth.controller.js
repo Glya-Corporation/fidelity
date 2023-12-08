@@ -4,11 +4,11 @@ const login = async (req, res, next) => {
   try {
     const credentials = req.body;
     const result = await AuthServices.login(credentials);
-    
+
     if (result) {
-      const { email, password, id, roleId, name, surname, businessId } = result;
+      const { email, password, id, roleId, name, surname } = result;
       const token = await AuthServices.generateToken({ email, password, id });
-      const user = { id, name, surname, email, number, isVerify, role, business };
+      const user = { id, name, surname, email, roleId };
       res.status(200).json({ user, token });
     } else {
       res.status(400).json({ message: 'Contraseña incorrecta' });

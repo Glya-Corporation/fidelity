@@ -5,27 +5,7 @@ const router = Router();
 
 /**
 * @openapi
-* /api/v1/login/client:
-*   post:
-*     summary: Login
-*     tags: [Auth]
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             type: object
-*             properties:
-*               email:
-*                 type: string
-*                 description: Email
-*               password:
-*                 type: string
-*                 description: Password
-*             example:
-*               email: "example@gmail.com"
-*               password: "123123"
-* /api/v1/login/business:
+* /api/v1/login:
 *   post:
 *     summary: Login
 *     tags: [Auth]

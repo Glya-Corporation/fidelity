@@ -1,4 +1,4 @@
-const { Users, Categories, Products, Register, Business } = require('./index');
+const { Users, Categories, Products, Register, Business, Roles } = require('./index');
 
 const initModels = () => {
   Users.hasMany(Register, { as: 'register', foreignKey: 'user_id' });
@@ -16,8 +16,11 @@ const initModels = () => {
   Business.hasMany(Products, { as: 'products', foreignKey: 'business_id' });
   Products.belongsTo(Business, { as: 'owner', foreignKey: 'business_id' });
 
-    Business.hasMany(Categories, { as: 'categories', foreignKey: 'business_id' });
-    Categories.belongsTo(Business, { as: 'owner', foreignKey: 'business_id' });
+  Business.hasMany(Categories, { as: 'categories', foreignKey: 'business_id' });
+  Categories.belongsTo(Business, { as: 'owner', foreignKey: 'business_id' });
+
+  Roles.hasMany(Users, { as: 'user', foreignKey: 'role_id' });
+  Users.belongsTo(Roles, { as: 'role', foreignKey: 'role_id' });
 };
 
 module.exports = initModels;

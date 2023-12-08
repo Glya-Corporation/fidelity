@@ -1,4 +1,4 @@
-const { Users, Clients, Business, Colaborators, Roles } = require('../models');
+const { Users, UsersBusiness, Business } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -13,6 +13,9 @@ class AuthServices {
           exclude: ['createdAt', 'updatedAt']
         }
       });
+      const business = await UsersBusiness.findOne({ where: { userId: result.id }, attributes: ['userId', 'businessId'] });
+      const user = { ...result, ...business };
+      console.log(user);
       if (result) {
         const isValid = bcrypt.compareSync(password, result.password);
         return isValid ? result : isValid;
@@ -21,7 +24,7 @@ class AuthServices {
     } catch (error) {
       throw error;
     }
-  } 
+  }
   static generateToken(user) {
     try {
       const token = jwt.sign(user, process.env.SECRET_KEY, {
