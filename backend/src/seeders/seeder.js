@@ -5,7 +5,7 @@ const { categories, pulpoCoin, business, roles } = require('./data.js');
 
 initModels();
 
-db.sync({ force: false, alter: true })
+db.sync({ force: true })
   .then(() => {
     console.log('Iniciando la plantación de Información');
 
