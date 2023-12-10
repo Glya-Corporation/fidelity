@@ -16,7 +16,6 @@ const Register = () => {
     axios
       .post(`${apiUrl}/register/${id}`, data)
       .then(res => {
-        console.log(res.data);
         localStorage.setItem('user', JSON.stringify(res.data.user));
         localStorage.setItem('token', JSON.stringify(res.data.token));
         setTimeout(() => {
