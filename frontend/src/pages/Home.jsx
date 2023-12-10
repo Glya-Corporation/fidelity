@@ -1,16 +1,25 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import coinPng from '../assets/PULPO_COIN.png';
 
 import QRCode from 'qrcode.react';
 import { Button } from 'react-bootstrap';
 
 import { useNavigate } from 'react-router-dom';
+import { getUserThunk } from '../store/slices/user.slice';
 
 const Home = () => {
-  const user = { id: 1, name: 'Luis', surname: 'Uzcategui', coin: 25 }; //useSelector(state => state.user);
+  const { id } = JSON.parse(localStorage.getItem('user'));
+  const user = useSelector(state => state.user);
 
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(id);
+    if (id) dispatch(getUserThunk(id));
+  }, [id]);
 
   return (
     <main className='home background'>

@@ -1,8 +1,9 @@
-/* import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios'
+import { createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import apiUrl from '../../utils/apiUrl.js';
+import getConfig from '../../utils/getConfig.js';
 
-
-export const usersliceSlice = createSlice({
+export const userSlice = createSlice({
   name: 'user',
   initialState: {},
   reducers: {
@@ -12,13 +13,13 @@ export const usersliceSlice = createSlice({
   }
 });
 
-export const getUserThunk = id => (dispatch) => {
-    return axios.get('')
-        .then(() => dispatch(''))
-        .finally(() => dispatch(setIsLoading(false)));
-}
+export const getUserThunk = id => dispatch => {
+  return axios
+    .get(`${apiUrl}/user/${id}`, getConfig())
+    .then(() => dispatch(setUser(res.data)))
+    .catch(err => console.error(err));
+};
 
-export const { setUser } = usersliceSlice.actions;
+export const { setUser } = userSlice.actions;
 
-export default usersliceSlice.reducer;
- */
+export default userSlice.reducer;
