@@ -37,7 +37,7 @@ console.log(user)
         </div>
       </div>
       {
-        user.email === 'alfonsouzcategui2@gmail.com' && <Button variant='success' className='btn-more' onClick={() => setMore()}>
+        user?.email === 'alfonsouzcategui2@gmail.com' && <Button variant='success' className='btn-more' onClick={() => setMore()}>
         more
       </Button>
       }
