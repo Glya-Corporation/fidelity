@@ -17,14 +17,14 @@ class UserServices {
   static async getById(id) {
     try {
       const result = await Users.findByPk(id, {
-        attribute: {
+        attributes: {
           exclude: ['password', 'createdAt', 'updatedAt', 'role_id']
         },
         include: [
           {
             model: Register,
             as: 'register',
-            attribute: {
+            attributes: {
               exclude: [ 'createdAt', 'updatedAt']
             }
         },
@@ -32,7 +32,7 @@ class UserServices {
             model: Business,
             as: 'business',
             through: 'users_business',
-            attribute: {
+              attributes: {
               exclude: [ 'createdAt', 'updatedAt']
             }
         }
