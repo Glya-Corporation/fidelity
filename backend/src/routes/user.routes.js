@@ -6,7 +6,7 @@ const router = Router();
 
 router.post('/register/:businessId', createUser);
 
-router.get('/user/:id', authenticate, getUser);
+router.get('/user/:id', getUser);
 
 router.get('/user/buiness/:id', authenticate, getAllUserByBusinessId);
 
