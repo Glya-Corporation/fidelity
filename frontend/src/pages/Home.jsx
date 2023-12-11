@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import coinPng from '../assets/PULPO_COIN.png';
+import logo from '../assets/../assets/logopulpoSF.png'
 
 import QRCode from 'qrcode.react';
 import { Button } from 'react-bootstrap';
@@ -17,13 +18,14 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(id);
     if (id) dispatch(getUserThunk(id));
   }, [id]);
 
+console.log(user)
+
   return (
     <main className='home background'>
-      <img src={''} alt='Logo' className='logo' />
+      <img src={logo} alt='Logo' className='logo' />
       <div className='cart'>
         <h3>
           {user.name} {user.surname}
@@ -31,9 +33,14 @@ const Home = () => {
         <QRCode value={JSON.stringify(user)} renderAs='svg' fgColor='#000000' />
         <div className='coin'>
           <img src={coinPng} alt='Icono Coin' />
-          <p>{user.coin}</p>
+          <p>{user.business.coin}</p>
         </div>
       </div>
+      {
+        user.email === 'alfonsouzcategui2@gmail.com' && <Button variant='success' className='btn-more' onClick={() => setMore()}>
+        more
+      </Button>
+      }
       <Button variant='success' className='btn-canje' onClick={() => navigate('/list')}>
         Canjear
       </Button>

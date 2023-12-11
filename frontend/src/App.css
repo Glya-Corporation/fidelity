@@ -95,12 +95,18 @@ main {
   left: 1rem;
 }
 
-.btn-canje {
+.btn-canje,
+.btn-more {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   border-radius: 1.5rem !important;
   box-shadow: 0 0 15px var(--primry);
+}
+
+.btn-more {
+  left: 2rem;
+  border-radius: 50% !important;
 }
 
 .background {
