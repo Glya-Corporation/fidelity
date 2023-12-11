@@ -22,11 +22,6 @@ class UserServices {
         {
           model: Register,
           as: 'register',
-        },
-        {
-          model: Business,
-          as: 'business',
-          through: 'users_business'
         }
       ],
     });
