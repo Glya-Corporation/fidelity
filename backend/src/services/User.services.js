@@ -15,26 +15,35 @@ class UserServices {
     }
   }
   static async getById(id) {
-  try {
-    const result = await Users.findByPk(id, {
-      include: [
-        {
-          model: Register,
-          as: 'register',
+    try {
+      const result = await Users.findByPk(id, {
+        attribute: {
+          exclude: ['password', 'createdAt', 'updatedAt', 'role_id']
         },
-        {
-          model: Business,
-          as: 'business',
-          through: 'users_business'
+        include: [
+          {
+            model: Register,
+            as: 'register',
+            attribute: {
+              exclude: [ 'createdAt', 'updatedAt']
+            }
+        },
+          {
+            model: Business,
+            as: 'business',
+            through: 'users_business',
+            attribute: {
+              exclude: [ 'createdAt', 'updatedAt']
+            }
         }
       ],
-    });
+      });
 
-    return result;
-  } catch (error) {
-    throw error;
+      return result;
+    } catch (error) {
+      throw error;
+    }
   }
-}
 
   static async getAllByBusinessId(businessId) {
     try {
