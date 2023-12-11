@@ -1,4 +1,4 @@
-const { Users, UsersBusiness } = require('../models');
+const { Users, Business, Register } = require('../models');
 const AuthServices = require('./auth.service');
 
 class UserServices {
@@ -17,11 +17,15 @@ class UserServices {
   static async getById(id) {
   try {
     const result = await Users.findByPk(id, {
-      attributes: { exclude: ['password'] },
       include: [
         {
           model: Register,
           as: 'register',
+        },
+        {
+          model: Business,
+          as: 'business',
+          through: 'users_business'
         }
       ],
     });
