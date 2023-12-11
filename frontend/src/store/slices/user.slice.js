@@ -16,7 +16,7 @@ export const userSlice = createSlice({
 export const getUserThunk = id => dispatch => {
   return axios
     .get(`${apiUrl}/user/${id}`, getConfig())
-    .then(() => dispatch(setUser(res.data)))
+    .then(res => dispatch(setUser(res.data)))
     .catch(err => console.error(err));
 };
 
