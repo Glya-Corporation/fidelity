@@ -33,7 +33,7 @@ console.log(user)
         <QRCode value={JSON.stringify(user)} renderAs='svg' fgColor='#000000' />
         <div className='coin'>
           <img src={coinPng} alt='Icono Coin' />
-          <p>{user.business.coin}</p>
+          <p>{user?.coin}</p>
         </div>
       </div>
       {
