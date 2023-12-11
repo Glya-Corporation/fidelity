@@ -23,6 +23,7 @@ const Home = () => {
 
 console.log(user)
 
+
   return (
     <main className='home background'>
       <img src={logo} alt='Logo' className='logo' />
@@ -30,7 +31,7 @@ console.log(user)
         <h3>
           {user.name} {user.surname}
         </h3>
-        <QRCode value={JSON.stringify(user)} renderAs='svg' fgColor='#000000' />
+        <QRCode value={JSON.stringify({id: user.id, name: user.name, surname: user.surname})} renderAs='svg' fgColor='#000000' />
         <div className='coin'>
           <img src={coinPng} alt='Icono Coin' />
           <p>{user.business?.[0].users_business?.coin}</p>
