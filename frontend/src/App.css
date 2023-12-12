@@ -105,6 +105,8 @@ main {
 }
 
 .btn-more {
+  width: 100px;
+  height: 100px;
   left: 2rem;
   border-radius: 50% !important;
 }
