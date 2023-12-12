@@ -105,8 +105,10 @@ main {
 }
 
 .btn-more {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  font-size: 25px !important;
+  font-weight: bold;
   left: 2rem;
   border-radius: 50% !important;
 }

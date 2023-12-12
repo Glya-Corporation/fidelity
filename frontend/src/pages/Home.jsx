@@ -39,7 +39,7 @@ console.log(user)
       </div>
       {
         user?.email === 'alfonsouzcategui2@gmail.com' && <Button variant='success' className='btn-more' onClick={() => setMore()}>
-        more
+        +
       </Button>
       }
       <Button variant='success' className='btn-canje' onClick={() => navigate('/list')}>
