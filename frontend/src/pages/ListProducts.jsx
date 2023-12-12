@@ -6,8 +6,8 @@ import products from '../utils/products.js';
 import { Button } from 'react-bootstrap';
 
 const ListProsucts = () => {
-  //const products = useSelector(state => state.products);
-  //const user = useSelector(state => state.user);
+  const products = useSelector(state => state.product);
+  const user = useSelector(state => state.user);
 
   const [productsAll, setProductsAll] = useState();
 
@@ -22,8 +22,8 @@ const ListProsucts = () => {
   };
 
   useEffect(() => {
-    setProductsAll(pulpoCoin);
-  }, []);
+    setProductsAll(products);
+  }, [products]);
 
   return (
     <main className='background'>
@@ -37,7 +37,7 @@ const ListProsucts = () => {
             <img src={product.img} />
             <p>{product.name}</p>
             <h5>{product.coinValue}</h5>
-            <Button variant='success' disabled={product.coinValue > 25}>
+            <Button variant='success' disabled={product.coinValue > user.business?.[0].users_business?.coin}>
               Canjear
             </Button>
           </li>

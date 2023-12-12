@@ -6,12 +6,12 @@ const router = Router();
 
 router.post('/register/:businessId', createUser);
 
-router.get('/user/:id', getUser);
+router.get('/user/:id', /* authenticate, */ getUser);
 
-router.get('/user/buiness/:id', authenticate, getAllUserByBusinessId);
+router.get('/user/buiness/:id', /* authenticate, */ getAllUserByBusinessId);
 
-router.put('/user/:id/update', authenticate, updateUser);
+router.put('/user/:id/update', /* authenticate, */ updateUser);
 
-router.delete('/user/:id/delete', authenticate, deleteUser);
+router.delete('/user/:id/delete', /* authenticate, */ deleteUser);
 
 module.exports = router;

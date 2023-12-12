@@ -18,11 +18,15 @@ const Register = () => {
       .then(res => {
         localStorage.setItem('user', JSON.stringify(res.data.user));
         localStorage.setItem('token', JSON.stringify(res.data.token));
+        alert('Usuario creado');
         setTimeout(() => {
           navigate('/');
         }, 500);
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        alert(err.response.data.error)
+        console.error(err);
+      });
   };
 
   return (

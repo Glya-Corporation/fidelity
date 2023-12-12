@@ -1,4 +1,6 @@
 const { UserServices } = require('../services');
+const transporter = require('../utils/mailer');
+const template = require('../template/template');
 
 const createUser = async (req, res, next) => {
   try {
@@ -6,6 +8,14 @@ const createUser = async (req, res, next) => {
     const { businessId } = req.params;
     const result = await UserServices.create(body, businessId);
     res.status(201).json(result);
+    console.log(result);
+    transporter.sendMail({
+      from: 'corporationglya@gmail.com',
+      to: result.user.email,
+      subject: 'Bienvenido a Fidelity',
+      text: `¡Hola! ${result.user.name} bienvenido a Fidelity`,
+      html: template(result.user)
+    });
   } catch (error) {
     next({
       status: 400,
