@@ -5,7 +5,10 @@ import products from '../utils/products.js';
 
 import { Button } from 'react-bootstrap';
 
+import ProductModal from '../components/ProductModal.jsx'
+
 const ListProsucts = () => {
+  const [show, setShow] = useState()
   const products = useSelector(state => state.product);
   const user = useSelector(state => state.user);
 
@@ -24,9 +27,13 @@ const ListProsucts = () => {
   useEffect(() => {
     setProductsAll(products);
   }, [products]);
+  
+  const [productSelected, setProductSelected] = useState({})
 
   return (
     <main className='background'>
+    <ProductModal show={show}
+        onHide={() => setShow(false)} data={productSelected} />
       <button onClick={() => navigate(-1)}>back</button>
       <form>
         <input type='search' />
@@ -37,7 +44,7 @@ const ListProsucts = () => {
             <img src={product.img} />
             <p>{product.name}</p>
             <h5>{product.coinValue}</h5>
-            <Button variant='success' disabled={product.coinValue > user.business?.[0].users_business?.coin}>
+            <Button variant='success' disabled={product.coinValue > user.business?.[0].users_business?.coin} onClick={() => setProductSelected(product)} >
               Canjear
             </Button>
           </li>
