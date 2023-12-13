@@ -113,6 +113,16 @@ main {
   border-radius: 50% !important;
 }
 
+.filter {
+    margin: 5rem auto 1rem;
+}
+
+.btn-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
 .background {
   background-image: url('./assets/background.jpg');
   background-position: center center;
@@ -131,6 +141,7 @@ main {
 }
 
 .item-product {
+  height: min-content;
   padding: .5rem;
   list-style: none;
   display: flex;
@@ -149,6 +160,14 @@ main {
   height: 90px;
   object-fit: cover;
   border-radius: .5rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0 !important;
 }
 
 @media only screen and ( min-width: 600px) {
