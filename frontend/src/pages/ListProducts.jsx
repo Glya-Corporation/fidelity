@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { Form, Button } from 'react-bootstrap';
 
+import { Button } from 'react-bootstrap';
+
 import ProductModal from '../components/ProductModal.jsx'
 
 const ListProsucts = () => {
