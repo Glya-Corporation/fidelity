@@ -4,27 +4,23 @@ import { useNavigate } from 'react-router-dom';
 
 import { Form, Button } from 'react-bootstrap';
 
-import { Button } from 'react-bootstrap';
-
-import ProductModal from '../components/ProductModal.jsx'
+import ProductModal from '../components/ProductModal.jsx';
 
 const ListProsucts = () => {
-  const [show, setShow] = useState()
+  const [show, setShow] = useState();
   const products = useSelector(state => state.product);
   const user = useSelector(state => state.user);
 
   const [productsAll, setProductsAll] = useState();
 
-
   const navigate = useNavigate();
 
   const filterName = data => {
-  if(data === ''){
-  setProductsAll(products);
-  }else {
-  setProductsAll(products.filter(e => e.name.includes(data)))
-  }
-  
+    if (data === '') {
+      setProductsAll(products);
+    } else {
+      setProductsAll(products.filter(e => e.name.includes(data)));
+    }
   };
 
   const order = () => {
@@ -34,19 +30,21 @@ const ListProsucts = () => {
   useEffect(() => {
     setProductsAll(products);
   }, [products]);
-  
-  const [productSelected, setProductSelected] = useState({})
+
+  const [productSelected, setProductSelected] = useState({});
 
   const showQr = data => {
-  setProductSelected(data);
-  console.log(productSelected)
-  setShow(true)
-  }
+    setProductSelected(data);
+    console.log(productSelected);
+    setShow(true);
+  };
 
   return (
     <main className='background'>
-    <ProductModal show={show} onHide={() => setShow(false)} data={productSelected} />
-      <Button onClick={() => navigate(-1)} className='btn-back'>back</Button>
+      <ProductModal show={show} onHide={() => setShow(false)} data={productSelected} />
+      <Button onClick={() => navigate(-1)} className='btn-back'>
+        back
+      </Button>
       <Form className='mb-3 filter'>
         <Form.Control type='search' placeholder='Buscar por nombre o puntos' onChange={e => filterName(e.target.value)} />
       </Form>
@@ -56,7 +54,7 @@ const ListProsucts = () => {
             <img src={product.img} />
             <p>{product.name}</p>
             <h5>{product.coinValue}</h5>
-            <Button variant='success' disabled={product.coinValue > user.business?.[0].users_business?.coin} onClick={() => showQr(product)} >
+            <Button variant='success' disabled={product.coinValue > user.business?.[0].users_business?.coin} onClick={() => showQr(product)}>
               Canjear
             </Button>
           </li>
