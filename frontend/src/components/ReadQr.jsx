@@ -54,7 +54,7 @@ const ReadQr = () => {
       </Button>
       <AmountModal show={show} onHide={() => setShow(false)} save={value => saveValue(value)} />
       <div></div>
-      <QrScanner onScan={handleScan} onError={handleError} facingMode='environment' />
+      <QrScanner onScan={handleScan} onError={handleError} facingMode='front' />
     </main>
   );
 };
