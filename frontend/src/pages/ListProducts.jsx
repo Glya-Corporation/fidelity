@@ -42,7 +42,7 @@ const ListProsucts = () => {
   return (
     <main className='background'>
       <ProductModal show={show} onHide={() => setShow(false)} data={productSelected} />
-      <Button onClick={() => navigate(-1)} className='btn-back'>
+      <Button onClick={() => navigate(-1)} className='btn-back' variant='danger'>
         back
       </Button>
       <Form className='mb-3 filter'>

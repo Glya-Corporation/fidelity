@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import apiUrl from '../utils/apiUrl.js';
+import { useEffect } from 'react';
 
 const Login = () => {
   const { handleSubmit, register, reset } = useForm();
@@ -16,7 +17,6 @@ const Login = () => {
     axios
       .post(`${apiUrl}/login`, data)
       .then(res => {
-        console.log(res.data);
         localStorage.setItem('user', JSON.stringify(res.data.user));
         localStorage.setItem('token', JSON.stringify(res.data.token));
         setTimeout(() => {
@@ -29,15 +29,16 @@ const Login = () => {
   return (
     <main className='background'>
       <Form onSubmit={handleSubmit(login)} className='form'>
+        <h3 className='mb-4'>Iniciar sesión</h3>
         <Form.Group className='mb-3'>
           <Form.Control className='input' {...register('email')} type='email' placeholder='Correo' />
         </Form.Group>
         <Form.Group className='mb-3'>
           <Form.Control className='input' {...register('password')} type='password' placeholder='Contraseña' />
         </Form.Group>
-        <Form.Group className='mb-3'>
+        {/* <Form.Group className='mb-3'>
           <Form.Check {...register('check')} type='checkbox' label='Recuerdame' />
-        </Form.Group>
+        </Form.Group> */}
         <Button variant='success' type='submit'>
           Login
         </Button>

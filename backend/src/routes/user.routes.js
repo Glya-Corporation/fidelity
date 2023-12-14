@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { createUser, getUser, getAllUserByBusinessId, updateUser, deleteUser } = require('../controllers');
+const { createUser, getUser, getAllUserByBusinessId, updateUser, updateUserCoin, deleteUser } = require('../controllers');
 const authenticate = require('../middlewares/auth.middleware');
 
 const router = Router();
@@ -11,6 +11,8 @@ router.get('/user/:id', /* authenticate, */ getUser);
 router.get('/user/buiness/:id', /* authenticate, */ getAllUserByBusinessId);
 
 router.put('/user/:id/update', /* authenticate, */ updateUser);
+
+router.put('/user/:id/update/coin', /* authenticate, */ updateUserCoin);
 
 router.delete('/user/:id/delete', /* authenticate, */ deleteUser);
 

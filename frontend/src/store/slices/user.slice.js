@@ -20,6 +20,13 @@ export const getUserThunk = id => dispatch => {
     .catch(err => console.error(err));
 };
 
+export const updateCoinThunk = id => dispatch => {
+  return axios
+    .put(`${apiUrl}/user/${id}/update/coin`)
+    .then(res => console.log(res.data))
+    .catch(err => console.error(err));
+};
+
 export const { setUser } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -68,6 +68,21 @@ const updateUser = async (req, res, next) => {
   }
 };
 
+const updateUserCoin = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const body = req.body;
+    const result = await UserServices.updateUserCoin(id, body);
+    res.status(200).json(result);
+  } catch (error) {
+    next({
+      status: 400,
+      message: 'Error al actualizar',
+      errorContent: error
+    });
+  }
+};
+
 const deleteUser = async (req, res, next) => {
   try {
     const id = req.params.id;
@@ -82,4 +97,4 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
-module.exports = { createUser, getUser, getAllUserByBusinessId, updateUser, deleteUser };
+module.exports = { createUser, getUser, getAllUserByBusinessId, updateUser, updateUserCoin, deleteUser };

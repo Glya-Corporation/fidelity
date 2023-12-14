@@ -69,11 +69,19 @@ class UserServices {
       throw error;
     }
   }
+  static async updateUserCoin(id, coin) {
+    try {
+      await UsersBusiness.update(coin, { where: { userId: id } });
+      return { message: 'Usuario actualizado' };
+    } catch (error) {
+      throw error;
+    }
+  }
   static async deleteUser(id) {
     try {
       const promises = [Users.destroy({ where: { id } }), UsersBusiness.destroy({ where: { userId: id } }), Register.destroy({ where: { userId: id } })];
-      
-      await Promise.all(promises)
+
+      await Promise.all(promises);
       return { message: 'Usuario eliminado' };
     } catch (error) {
       throw error;

@@ -8,6 +8,7 @@ import Register from './pages/Register.jsx';
 
 import './App.css';
 import ListProsucts from './pages/ListProducts.jsx';
+import ReadQr from './components/ReadQr.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Home />} />
           <Route path='/list' element={<ListProsucts />} />
+          <Route path='/qr' element={<ReadQr />} />
         </Route>
       </Routes>
     </HashRouter>
