@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import coinPng from '../assets/PULPO_COIN.png';
 import logo from '../assets/../assets/logopulpoSF.png';
@@ -11,6 +11,7 @@ import { getUserThunk } from '../store/slices/user.slice';
 import { getProductsThunk } from '../store/slices/product.slice';
 
 const Home = () => {
+  const [showMore, setShowMore] = useState(false);
   const { id } = JSON.parse(localStorage.getItem('user'));
   const user = useSelector(state => state.user);
 
@@ -33,16 +34,21 @@ const Home = () => {
         <h3>
           {user.name} {user.surname}
         </h3>
-        <QRCode value={JSON.stringify({ id: user.id, name: user.name, surname: user.surname })} renderAs='svg' fgColor='#000000' />
+        <QRCode value={JSON.stringify({ id: user.id, name: user.name, surname: user.surname, coin: user.business?.[0].users_business.coin })} renderAs='svg' fgColor='#000000' />
         <div className='coin'>
           <img src={coinPng} alt='Icono Coin' />
           <p>{user.business?.[0].users_business?.coin}</p>
         </div>
       </div>
-      {user?.email === 'alfonsouzcategui2@gmail.com' && (
-        <Button variant='success' className='btn-more' onClick={() => navigate('/qr')}>
-          +
-        </Button>
+      {user?.roleId !== 1 && (
+        <div className='more-options'>
+          <Button variant='success' className='btn-more' onClick={() => setShowMore(!showMore)}>
+            +
+          </Button>
+          <ul className={showMore ? 'show' : ''}>
+            <li onClick={() => navigate('/qr')}>Escanear QR</li>
+          </ul>
+        </div>
       )}
       <Button variant='success' className='btn-canje' onClick={() => navigate('/list')}>
         Canjear

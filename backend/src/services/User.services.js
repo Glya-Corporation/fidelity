@@ -71,6 +71,7 @@ class UserServices {
   }
   static async updateUserCoin(id, coin) {
     try {
+      console.log(id, coin)
       await UsersBusiness.update(coin, { where: { userId: id } });
       return { message: 'Usuario actualizado' };
     } catch (error) {

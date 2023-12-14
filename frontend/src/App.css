@@ -104,6 +104,38 @@ main {
   box-shadow: 0 0 15px var(--primry);
 }
 
+.more-options {
+  height: min-content;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+}
+
+.more-options ul {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: max-content;
+  position: absolute;
+  bottom: 4rem;
+  left: 1rem;
+  background-color: #ffffff90;
+  box-shadow: 0 0 5px var(--primry);
+  transform: scale(0);
+  transition: 0.5s all ease-in-out;
+}
+
+.show {
+  transform: scale(1) !important;
+}
+
+.more-options ul li {
+  list-style: none;
+  font-weight: bold;
+  border-bottom: 1px solid var(--primry);
+}
+
 .btn-more {
   width: 50px;
   height: 50px;

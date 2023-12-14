@@ -20,9 +20,9 @@ export const getUserThunk = id => dispatch => {
     .catch(err => console.error(err));
 };
 
-export const updateCoinThunk = id => dispatch => {
+export const updateCoinThunk = (id, coin) => dispatch => {
   return axios
-    .put(`${apiUrl}/user/${id}/update/coin`)
+    .put(`${apiUrl}/user/${id}/update/coin`, coin)
     .then(res => console.log(res.data))
     .catch(err => console.error(err));
 };
