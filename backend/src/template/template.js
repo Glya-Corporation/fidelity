@@ -187,6 +187,8 @@ const template = data => {
 En <b>Pulpo Marinero</b>, nos esforzamos por ofrecer productos/servicios de la más alta calidad y una experiencia única para cada cliente. Tu decisión de unirte a nosotros no solo nos llena de alegría, sino que también fortalece nuestro compromiso de brindar lo mejor en cada interacción contigo.
 
 Para expresar nuestro agradecimiento por tu confianza y fidelidad, hemos diseñado un programa especial de recompensas exclusivas que te permitirá disfrutar de beneficios adicionales y sorpresas pensadas especialmente para ti. Creemos en construir relaciones sólidas, y tu elección de permanecer con nosotros nos impulsa a mejorar constantemente.
+
+<a style="margin: auto; text-align: center; font-size: 20px; mso-line-height-alt: 24px;" href="https://fidelity-clients.web.app/#/login" target="blank">¡Haz Login!<a/>
                                                                             </p>
                                                                         </div>
                                                                     </div>

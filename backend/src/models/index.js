@@ -5,5 +5,6 @@ const Products = require('./Products.model.js');
 const Business = require('./Business.model.js');
 const UsersBusiness = require('./UsersBusiness.model.js');
 const Roles = require('./Roles.model.js');
+const Inventory = require('./inventory.model.js');
 
-module.exports = { Users, Register, Categories, Products, Business, UsersBusiness, Roles };
+module.exports = { Users, Register, Categories, Products, Business, UsersBusiness, Roles, Inventory };
