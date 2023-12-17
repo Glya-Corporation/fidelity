@@ -1,7 +1,6 @@
-import { useState, useCallback } from 'react';
-import QrScanner from 'react-qr-scanner';
+import { useState } from 'react';
 import AmountModal from './AmountModal';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateCoinThunk } from '../store/slices/user.slice';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
@@ -10,8 +9,6 @@ import Html5QrcodePlugin from './Html5QrcodePlugin';
 const ReadQr = () => {
   const [qrCode, setQrCode] = useState({});
   const [show, setShow] = useState(false);
-
-  const user = useSelector(state => state.user);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,6 +32,7 @@ const ReadQr = () => {
     if (op > 0) {
       coinSum = { coin: Number(op) - Number(v) };
       dispatch(updateCoinThunk(scaned.userId, coinSum));
+      
     } else {
       coinSum = { coin: Number(qrCode.coin) + Number(v) };
       dispatch(updateCoinThunk(qrCode.id, coinSum));
@@ -49,7 +47,7 @@ const ReadQr = () => {
         Back
       </Button>
       <AmountModal show={show} onHide={() => setShow(false)} save={value => saveValue(value)} />
-      <Html5QrcodePlugin fps={10} qrbox={250} disableFlip={false} qrCodeSuccessCallback={onNewScanResult} />
+      <Html5QrcodePlugin fps={20} qrbox={300} disableFlip={false} qrCodeSuccessCallback={onNewScanResult} />
     </main>
   );
 };
