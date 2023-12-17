@@ -45,7 +45,7 @@ const ReadQr = () => {
   };
 
   return (
-    <main className='qr-scan'>
+    <main className=''>
       <Button variant='danger' className='btn-back' onClick={() => navigate(-1)}>
         Back
       </Button>
