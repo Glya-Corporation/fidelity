@@ -17,13 +17,12 @@ const ReadQr = () => {
   const dispatch = useDispatch();
 
   // Función para manejar la detección de QR
-
-  const onNewScanResult = (result, decodedResult) => {
+  const onNewScanResult = (decodedText, decodedResult) => {
     // handle decoded results here
-    if (result) {
-      const scaned = JSON.parse(result.text);
+    if (decodedText) {
+      const scaned = JSON.parse(decodedText);
       if (scaned.hasOwnProperty('coinValue')) {
-        saveValue(scaned.coinValue, scaned.userId, scaned);
+        saveValue(scaned.coinValue, scaned.coinUser, scaned);
       } else {
         setQrCode(scaned);
         setShow(true);
@@ -50,8 +49,6 @@ const ReadQr = () => {
         Back
       </Button>
       <AmountModal show={show} onHide={() => setShow(false)} save={value => saveValue(value)} />
-      {/* <div></div>
-      <QrScanner onScan={handleScan} onError={handleError}/> */}
       <Html5QrcodePlugin fps={10} qrbox={250} disableFlip={false} qrCodeSuccessCallback={onNewScanResult} />
     </main>
   );
