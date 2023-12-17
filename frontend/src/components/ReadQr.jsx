@@ -20,7 +20,6 @@ const ReadQr = () => {
     if (result) {
       const scaned = JSON.parse(result.text);
       if (scaned.hasOwnProperty('coinValue')) {
-        scaned.id = user.id;
         saveValue(scaned.coinValue, user.business[0].users_business.coin, scaned);
       } else {
         setQrCode(scaned);
@@ -33,7 +32,7 @@ const ReadQr = () => {
     let coinSum = {};
     if (op > 0) {
       coinSum = { coin: Number(op) - Number(v) };
-      dispatch(updateCoinThunk(scaned.id, coinSum));
+      dispatch(updateCoinThunk(scaned.userId, coinSum));
     } else {
       coinSum = { coin: Number(qrCode.coin) + Number(v) };
       dispatch(updateCoinThunk(qrCode.id, coinSum));
@@ -54,7 +53,7 @@ const ReadQr = () => {
       </Button>
       <AmountModal show={show} onHide={() => setShow(false)} save={value => saveValue(value)} />
       <div></div>
-      <QrScanner onScan={handleScan} onError={handleError} facingMode='environment' />
+      <QrScanner onScan={handleScan} onError={handleError} cameraType='back' />
     </main>
   );
 };
