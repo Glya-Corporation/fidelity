@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import QrScanner from 'react-qr-scanner';
 import AmountModal from './AmountModal';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,18 +9,34 @@ import { Button } from 'react-bootstrap';
 const ReadQr = () => {
   const [qrCode, setQrCode] = useState({});
   const [show, setShow] = useState(false);
+  const [facingMode, setFacingMode] = useState('environment'); // Use 'user' for front camera
 
-  const user = useSelector(state => state.user);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Función para manejar la detección de QR
+  useEffect(() => {
+    const handleUserMedia = stream => {
+      const track = stream.getVideoTracks()[0];
+      const facingMode = track.getSettings().facingMode;
+      setFacingMode(facingMode);
+    };
+
+    navigator.mediaDevices
+      .getUserMedia({ video: { facingMode: 'environment' } })
+      .then(handleUserMedia)
+      .catch(error => console.error('Error accessing user media:', error));
+
+    return () => {
+      // Cleanup code if needed
+    };
+  }, []);
+
   const handleScan = useCallback(result => {
     if (result) {
       const scaned = JSON.parse(result.text);
       if (scaned.hasOwnProperty('coinValue')) {
-        saveValue(scaned.coinValue, user.business[0].users_business.coin, scaned);
+        saveValue(scaned.coinValue, scaned.coinUser, scaned);
       } else {
         setQrCode(scaned);
         setShow(true);
@@ -41,7 +57,6 @@ const ReadQr = () => {
     navigate('/');
   };
 
-  // Función para manejar errores durante la detección
   const handleError = useCallback(error => {
     console.error(error);
   }, []);
@@ -53,7 +68,7 @@ const ReadQr = () => {
       </Button>
       <AmountModal show={show} onHide={() => setShow(false)} save={value => saveValue(value)} />
       <div></div>
-      <QrScanner onScan={handleScan} onError={handleError} cameraType='back' />
+      <QrScanner onScan={handleScan} onError={handleError} facingMode={facingMode} />
     </main>
   );
 };
