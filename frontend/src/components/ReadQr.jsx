@@ -1,48 +1,35 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import QrScanner from 'react-qr-scanner';
 import AmountModal from './AmountModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCoinThunk } from '../store/slices/user.slice';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import Html5QrcodePlugin from './Html5QrcodePlugin';
 
 const ReadQr = () => {
   const [qrCode, setQrCode] = useState({});
   const [show, setShow] = useState(false);
-  const [facingMode, setFacingMode] = useState('environment'); // Use 'user' for front camera
 
+  const user = useSelector(state => state.user);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const handleUserMedia = stream => {
-      const track = stream.getVideoTracks()[0];
-      const facingMode = track.getSettings().facingMode;
-      setFacingMode(facingMode);
-    };
+  // Función para manejar la detección de QR
 
-    navigator.mediaDevices
-      .getUserMedia({ video: { facingMode: 'environment' } })
-      .then(handleUserMedia)
-      .catch(error => console.error('Error accessing user media:', error));
-
-    return () => {
-      // Cleanup code if needed
-    };
-  }, []);
-
-  const handleScan = useCallback(result => {
+  const onNewScanResult = (result, decodedResult) => {
+    // handle decoded results here
     if (result) {
       const scaned = JSON.parse(result.text);
       if (scaned.hasOwnProperty('coinValue')) {
-        saveValue(scaned.coinValue, scaned.coinUser, scaned);
+        saveValue(scaned.coinValue, scaned.userId, scaned);
       } else {
         setQrCode(scaned);
         setShow(true);
       }
     }
-  }, []);
+  };
 
   const saveValue = (v, op, scaned) => {
     let coinSum = {};
@@ -57,18 +44,15 @@ const ReadQr = () => {
     navigate('/');
   };
 
-  const handleError = useCallback(error => {
-    console.error(error);
-  }, []);
-
   return (
     <main className='qr-scan'>
       <Button variant='danger' className='btn-back' onClick={() => navigate(-1)}>
         Back
       </Button>
       <AmountModal show={show} onHide={() => setShow(false)} save={value => saveValue(value)} />
-      <div></div>
-      <QrScanner onScan={handleScan} onError={handleError} facingMode={facingMode} />
+      {/* <div></div>
+      <QrScanner onScan={handleScan} onError={handleError}/> */}
+      <Html5QrcodePlugin fps={10} qrbox={250} disableFlip={false} qrCodeSuccessCallback={onNewScanResult} />
     </main>
   );
 };
