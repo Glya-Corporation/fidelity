@@ -23,7 +23,10 @@ export const getUserThunk = id => dispatch => {
 export const updateCoinThunk = (id, coin) => dispatch => {
   return axios
     .put(`${apiUrl}/user/${id}/update/coin`, coin)
-    .then(res => console.log(res.data))
+    .then(res => {
+      console.log(res.data);
+      alert('Hecho')
+    })
     .catch(err => console.error(err));
 };
 
