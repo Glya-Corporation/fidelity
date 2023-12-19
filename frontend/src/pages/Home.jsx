@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { getUserThunk } from '../store/slices/user.slice';
 import { getProductsThunk } from '../store/slices/product.slice';
 
+import Footer from '../components/Footer.jsx'
+
 const Home = () => {
   const [showMore, setShowMore] = useState(false);
   const { id } = JSON.parse(localStorage.getItem('user'));
@@ -53,6 +55,7 @@ const Home = () => {
       <Button variant='success' className='btn-canje' onClick={() => navigate('/list')}>
         Canjear
       </Button>
+      <Footer />
     </main>
   );
 };

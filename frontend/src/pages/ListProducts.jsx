@@ -6,6 +6,8 @@ import { Form, Button } from 'react-bootstrap';
 
 import ProductModal from '../components/ProductModal.jsx';
 
+import Footer from '../components/Footer.jsx'
+
 const ListProsucts = () => {
   const [show, setShow] = useState();
   const products = useSelector(state => state.product);
@@ -60,6 +62,7 @@ const ListProsucts = () => {
           </li>
         ))}
       </ul>
+      <Footer />
     </main>
   );
 };
