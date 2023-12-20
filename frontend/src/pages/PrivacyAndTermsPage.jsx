@@ -5,7 +5,7 @@ const PrivacyAndTermsPage = () => {
   const navigate = useNavigate();
   
   return (
-    <div>
+    <div className='privacy'>
       <section>
         <h2>Política de Privacidad de Fidelity</h2>
 
