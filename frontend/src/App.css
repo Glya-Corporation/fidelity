@@ -189,13 +189,19 @@ main {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
+  position: relative;
 }
 
 .item-product img {
-  width: 95px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 0.5rem;
+}
+
+.item-product button {
+  position: absolute;
+  bottom: .2rem;
 }
 
 .modal-body {

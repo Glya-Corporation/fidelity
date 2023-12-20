@@ -55,7 +55,7 @@ const ListProsucts = () => {
           <li key={product.id} className='item-product'>
             <img src={product.img} />
             <p>{product.name}</p>
-            <h5>{product.coinValue}</h5>
+            <h6>{product.coinValue}</h6>
             <Button variant='success' disabled={product.coinValue > user.business?.[0].users_business?.coin} onClick={() => showQr(product)}>
               Canjear
             </Button>
