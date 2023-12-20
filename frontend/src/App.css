@@ -175,8 +175,8 @@ main {
 }
 
 .item-product {
-  height: 266px;
-  padding: 0.5rem;
+  height: 300px;
+  padding: 0.1rem 0.5rem;
   list-style: none;
   display: flex;
   gap: 0.5rem;
