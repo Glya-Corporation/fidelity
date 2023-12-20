@@ -35,7 +35,7 @@ img {
 
 main {
   width: 100vw;
-  height: calc(100vh - 2.5rem);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,12 +220,16 @@ main {
 
 .footer {
   width: 100vw;
-  height: 2.5rem;
+  height: 3.5rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
-  background-color: #000000;
+  gap: 1px;
+  background-color: #00000080;
   color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
 }
 
 @media only screen and (min-width: 600px) {
