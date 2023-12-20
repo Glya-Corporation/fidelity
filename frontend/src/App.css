@@ -118,7 +118,7 @@ main {
   gap: 0.5rem;
   width: max-content;
   position: absolute;
-  bottom: 5rem;
+  bottom: 5.5rem;
   left: 1rem;
   background-color: #ffffff90;
   box-shadow: 0 0 5px var(--primry);
@@ -239,6 +239,10 @@ main {
 
 .privacy {
   padding: 2rem 1rem;
+}
+
+.list {
+  padding-bottom: 4.5rem
 }
 
 @media only screen and (min-width: 600px) {

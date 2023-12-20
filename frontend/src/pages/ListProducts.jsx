@@ -42,7 +42,7 @@ const ListProsucts = () => {
   };
 
   return (
-    <main className='background'>
+    <main className='background list'>
       <ProductModal show={show} onHide={() => setShow(false)} data={productSelected} />
       <Button onClick={() => navigate(-1)} className='btn-back' variant='danger'>
         back
