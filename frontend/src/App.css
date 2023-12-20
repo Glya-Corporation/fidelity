@@ -98,7 +98,7 @@ main {
 .btn-canje,
 .btn-more {
   position: fixed;
-  bottom: 2rem;
+  bottom: 4.5rem;
   right: 2rem;
   border-radius: 1.5rem !important;
   box-shadow: 0 0 15px var(--primry);
@@ -118,7 +118,7 @@ main {
   gap: 0.5rem;
   width: max-content;
   position: absolute;
-  bottom: 4rem;
+  bottom: 5rem;
   left: 1rem;
   background-color: #ffffff90;
   box-shadow: 0 0 5px var(--primry);
@@ -220,7 +220,7 @@ main {
 
 .footer {
   width: 100vw;
-  height: 3.5rem;
+  height: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -230,6 +230,10 @@ main {
   font-size: 15px;
   position: absolute;
   bottom: 0;
+}
+
+.footer p {
+  margin: 0
 }
 
 @media only screen and (min-width: 600px) {
