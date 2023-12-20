@@ -6,17 +6,15 @@ const Footer = () => {
 
   return (
     <footer className='footer'>
+    <div>
+        <p>Cuenca, EC</p>
+        <b>Fidelity || ¡Descarga la App!</b>
+      </div>
       <div>
         <p onClick={() => navigate('/privacyAndTerms')}>
-          <span>Política de Privacidad </span>
-          <span> Términos y Condiciones</span>
+          <b>Política de Privacidad </b>
+          <b> Términos y Condiciones</b>
         </p>
-      </div>
-
-      <div>
-        <p>Cuenca, EC</p>
-        <b>Fidelity || </b>
-        <b>¡Descarga la App!</b>
       </div>
     </footer>
   );
