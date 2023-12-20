@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className='footer'>
     <div>
         <p>Cuenca, EC</p>
-        <b>Fidelity || ¡Descarga la App!</b>
+        <a href='http://www.appcreator24.com/app2949379-i3erdo' target='blank'>Fidelity || ¡Descarga la App!</a>
       </div>
       <div>
         <p onClick={() => navigate('/privacyAndTerms')}>
