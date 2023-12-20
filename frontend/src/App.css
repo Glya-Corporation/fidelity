@@ -220,16 +220,17 @@ main {
 
 .footer {
   width: 100vw;
-  height: 4rem;
+  height: 3.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1px;
   background-color: #00000080;
   color: #ffffff;
   text-align: center;
   font-size: 15px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer p {
