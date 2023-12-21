@@ -6,10 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import apiUrl from '../utils/apiUrl.js';
-import { useEffect } from 'react';
+import AlertComponent from '../components/AlertComponent.jsx';
+import { useState } from 'react';
 
 const Login = () => {
   const { handleSubmit, register, reset } = useForm();
+  const [message, setMessage] = useState('hola luis');
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
 
@@ -23,11 +26,16 @@ const Login = () => {
           navigate('/');
         }, 500);
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error(err);
+        setMessage(err.response.data.message);
+        setShow(true);
+      });
   };
 
   return (
     <main className='background'>
+      <AlertComponent message={message} show={show} onHide={() => setShow(false)} />
       <Form onSubmit={handleSubmit(login)} className='form'>
         <h3 className='mb-4'>Iniciar sesión</h3>
         <Form.Group className='mb-3'>

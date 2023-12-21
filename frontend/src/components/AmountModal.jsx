@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+
 const AmountModal = props => {
   const [amount, setAmount] = useState(0);
 
