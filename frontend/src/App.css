@@ -243,6 +243,10 @@ main {
   margin: 0
 }
 
+.footer a {
+  color: #ffffff;
+}
+
 .privacy {
   padding: 2rem 1rem;
 }
