@@ -8,7 +8,7 @@ router.post('/product/create', /* authenticate, */ createProduct);
 
 router.get('/product/:id', /* authenticate, */ getProduct);
 
-router.get('/product/buiness/:id', /* authenticate, */ getAllProductByBusinessId);
+router.get('/product/business/:id', /* authenticate, */ getAllProductByBusinessId);
 
 router.put('/product/:id/update', /* authenticate, */ updateProduct);
 

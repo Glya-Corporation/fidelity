@@ -51,9 +51,25 @@ class UserServices {
 
   static async getAllByBusinessId(businessId) {
     try {
-      const result = await Users.findAll({ where: { businessId } });
+      const result = await Users.findAll({
+        include: [
+          {
+            model: Business,
+            as: 'business',
+            through: {
+              model: UsersBusiness,
+              where: { businessId }
+            },
+            attributes: [] // Para excluir las columnas de Business en los resultados de Users
+          }
+        ],
+        attributes: {
+            exclude: ['password', 'role_id', 'createdAt', 'updatedAt']
+        }
+      });
       return result;
     } catch (error) {
+      console.log(error);
       throw error;
     }
   }
@@ -71,7 +87,7 @@ class UserServices {
   }
   static async updateUserCoin(id, coin) {
     try {
-      console.log(id, coin)
+      console.log(id, coin);
       await UsersBusiness.update(coin, { where: { userId: id } });
       return { message: 'Usuario actualizado' };
     } catch (error) {

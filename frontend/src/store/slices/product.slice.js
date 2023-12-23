@@ -15,7 +15,7 @@ export const productsliceSlice = createSlice({
 
 export const getProductsThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}/product/buiness/${id}`, getConfig())
+    .get(`${apiUrl}/product/business/${id}`, getConfig())
     .then(res => {
       dispatch(setProducts(res.data));
     })

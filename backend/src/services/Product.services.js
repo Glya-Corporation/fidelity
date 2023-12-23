@@ -19,7 +19,13 @@ class ProductServices {
   }
   static async getAllProductByBusinessId(businessId) {
     try {
-      const result = await Products.findAll({ where: { businessId } });
+      const result = await Products.findAll({
+        where: { businessId },
+        attributes: {
+          exclude: ['createdAt', 'updatedAt', 'category_id', 'business_id']
+        },
+        order: [['coin_value', 'ASC']]
+      });
       return result;
     } catch (error) {
       throw error;

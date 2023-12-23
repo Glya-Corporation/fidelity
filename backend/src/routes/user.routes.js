@@ -8,7 +8,7 @@ router.post('/register/:businessId', createUser);
 
 router.get('/user/:id', /* authenticate, */ getUser);
 
-router.get('/user/buiness/:id', /* authenticate, */ getAllUserByBusinessId);
+router.get('/user/business/:id', /* authenticate, */ getAllUserByBusinessId);
 
 router.put('/user/:id/update', /* authenticate, */ updateUser);
 

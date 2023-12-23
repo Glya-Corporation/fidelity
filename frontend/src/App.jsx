@@ -10,6 +10,7 @@ import './App.css';
 import ListProsucts from './pages/ListProducts.jsx';
 import ReadQr from './components/ReadQr.jsx';
 import exitIcon from './assets/logout.svg';
+import Loader from './components/Loader.jsx';
 
 function App() {
   const logout = () => {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <HashRouter>
+      {/* <Loader /> */}
       <img src={exitIcon} alt='boton' className='btn-exit' onClick={() => logout()} />
       <Routes>
         <Route path='/login' element={<Login />} />

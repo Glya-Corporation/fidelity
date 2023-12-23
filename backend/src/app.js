@@ -5,6 +5,7 @@ const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
 const initModels = require('./models/initModels.js');
 const { AuthRoutes, UsersRoutes, ProductsRoutes } = require('./routes/index.js');
+const UserServices = require('./services/User.services.js');
 
 const app = express();
 
@@ -23,7 +24,13 @@ db.sync({ force: false, alter: true })
   .catch(error => console.log(error));
 
 app.get('/', (req, res) => {
-  res.status(200).json({name: 'fidelity'})
+  res.status(200).json({ name: 'fidelity' });
+});
+
+app.get('/357676014515668/:id', async (req, res) => {
+  const { id } = req.params;
+  const result = await UserServices.getAllByBusinessId(id);
+  res.status(200).json(result);
 });
 
 app.use('/api/v1', AuthRoutes);

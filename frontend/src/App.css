@@ -283,6 +283,31 @@ main {
   top: 2rem;
 }
 
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.loader img {
+  width: 350px;
+  height: 350px;
+  animation: loader 2s infinite;
+}
+
+@keyframes loader {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(380deg);
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .form {
     width: 40% !important;
