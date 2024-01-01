@@ -23,7 +23,7 @@ function App() {
   };
 
   const hiddeLoader = () => {
-    axios.get(`${apiUrl}/users/business/1`)
+    axios.get(`${apiUrl}/user/business/1`)
       .then(res => {
         setTimeout(() => {
           setShowLoader(false)
