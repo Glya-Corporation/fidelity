@@ -13,7 +13,7 @@ const ListProsucts = () => {
   const products = useSelector(state => state.product);
   const user = useSelector(state => state.user);
 
-  const [productsAll, setProductsAll] = useState();
+  const [productsAll, setProductsAll] = useState([]);
 
   const navigate = useNavigate();
 
@@ -31,6 +31,7 @@ const ListProsucts = () => {
 
   useEffect(() => {
     setProductsAll(products);
+    if (products.length < 1) navigate('/')
   }, [products]);
 
   const [productSelected, setProductSelected] = useState({});
