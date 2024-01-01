@@ -16,6 +16,8 @@ const ListProsucts = () => {
   const [productsAll, setProductsAll] = useState([]);
 
   const navigate = useNavigate();
+   
+  if (!user.id) navigate('/')
 
   const filterName = data => {
     if (data === '') {
@@ -31,7 +33,6 @@ const ListProsucts = () => {
 
   useEffect(() => {
     setProductsAll(products);
-    if (products.length < 1) navigate('/')
   }, [products]);
 
   const [productSelected, setProductSelected] = useState({});
