@@ -30,7 +30,7 @@ function App() {
         }, 2000)
       })
       .catch(err => {
-        console.log(err)
+        console.log(err, 'reload')
         setShowLoader(true)
       })
   }
