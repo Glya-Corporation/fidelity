@@ -35,6 +35,7 @@ function App() {
       })
   }
 
+  
   if (showLoader) hiddeLoader();
 
   return (
