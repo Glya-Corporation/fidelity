@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import ProtectedRoutes from './components/ProtectedRoutes.jsx';
@@ -12,31 +12,34 @@ import ListProsucts from './pages/ListProducts.jsx';
 import ReadQr from './components/ReadQr.jsx';
 import exitIcon from './assets/logout.svg';
 import Loader from './components/Loader.jsx';
-import axios from 'axios'
-import apiUrl from './utils/apiUrl.js'
+import axios from 'axios';
+import apiUrl from './utils/apiUrl.js';
 
 function App() {
-  const [showLoader, setShowLoader] = useState(true)
+  const [showLoader, setShowLoader] = useState(true);
   const logout = () => {
     localStorage.clear();
     location.reload();
   };
 
   const hiddeLoader = () => {
-    axios.get(`${apiUrl}/user/business/1`)
-      .then(res => {
+    axios
+      .get('https://alfonso.rjgu.es/')
+      .then(() => {
         setTimeout(() => {
-          setShowLoader(false)
-        }, 2000)
+          setShowLoader(false);
+        }, 2000);
       })
       .catch(err => {
-        console.log(err, 'reload')
-        setShowLoader(true)
-      })
-  }
+        console.log(err, 'reload');
+        setShowLoader(true);
+        hiddeLoader();
+      });
+  };
 
-  
-  if (showLoader) hiddeLoader();
+  useEffect(() => {
+    hiddeLoader();
+  }, []);
 
   return (
     <HashRouter>
