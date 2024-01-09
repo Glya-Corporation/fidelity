@@ -1,19 +1,15 @@
 const { Router } = require('express');
-const { createUser, getUser, getAllUserByBusinessId, updateUser, updateUserCoin, deleteUser } = require('../controllers');
+const { createRegiater, getAllInventoryByBusinessId, updateInventoryStatus, deleteInventory } = require('../controllers');
 const authenticate = require('../middlewares/auth.middleware');
 
 const router = Router();
 
-router.post('/register/:businessId', createUser);
+router.post('/inventory', createRegiater);
 
-router.get('/user/:id', /* authenticate, */ getUser);
+router.get('/inventory/business/:id', /* authenticate, */ getAllInventoryByBusinessId);
 
-router.get('/user/buiness/:id', /* authenticate, */ getAllUserByBusinessId);
+router.put('/inventory/:id/update/status', /* authenticate, */ updateInventoryStatus);
 
-router.put('/user/:id/update', /* authenticate, */ updateUser);
-
-router.put('/user/:id/update/coin', /* authenticate, */ updateUserCoin);
-
-router.delete('/user/:id/delete', /* authenticate, */ deleteUser);
+router.delete('/inventory/:id/delete', /* authenticate, */ deleteInventory);
 
 module.exports = router;

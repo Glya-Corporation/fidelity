@@ -17,7 +17,7 @@ const ListProsucts = () => {
 
   const navigate = useNavigate();
    
-  if (!user.id) navigate('/')
+  if (!user.bueiness) navigate('/')
 
   const filterName = data => {
     if (data === '') {
