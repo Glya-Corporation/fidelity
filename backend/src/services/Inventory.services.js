@@ -1,9 +1,9 @@
-const {  } = require('../models');
+const { Inventory } = require('../models');
 
 class InventoryServices {
   static async create(body) {
     try {
-      const result = await Users.create(body);
+      const result = await Inventory.create(body);
       return result;
     } catch (error) {
       throw error;
@@ -12,9 +12,9 @@ class InventoryServices {
   static async getAllByBusinessId(businessId) {
     try {
       const result = await Inventory.findAll({
-        where: {businessId},
+        where: { businessId },
         attributes: {
-            exclude: ['createdAt', 'updatedAt']
+          exclude: ['createdAt', 'updatedAt']
         }
       });
       return result;
@@ -23,32 +23,17 @@ class InventoryServices {
       throw error;
     }
   }
-  static async updateUser(id, user) {
+  static async updateInventoryStatus(businessid, status) {
     try {
-      if (user.hasOwnProperty('password')) {
-        const hash = bcrypt.hashSync(user.password, 8);
-        user.password = hash;
-      }
-      await Users.update(user, { where: { id } });
+      await Inventory.update(status, { where: { businessId } });
       return { message: 'Usuario actualizado' };
     } catch (error) {
       throw error;
     }
   }
-  static async updateUserCoin(id, coin) {
+  static async deleteInventory(id) {
     try {
-      console.log(id, coin);
-      await UsersBusiness.update(coin, { where: { userId: id } });
-      return { message: 'Usuario actualizado' };
-    } catch (error) {
-      throw error;
-    }
-  }
-  static async deleteUser(id) {
-    try {
-      const promises = [Users.destroy({ where: { id } }), UsersBusiness.destroy({ where: { userId: id } }), Register.destroy({ where: { userId: id } })];
-
-      await Promise.all(promises);
+      await Inventory.destroy();
       return { message: 'Usuario eliminado' };
     } catch (error) {
       throw error;
