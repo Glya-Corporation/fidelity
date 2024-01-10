@@ -16,8 +16,6 @@ const ListProsucts = () => {
   const [productsAll, setProductsAll] = useState([]);
 
   const navigate = useNavigate();
-   
-  if (!user.bueiness) navigate('/')
 
   const filterName = data => {
     if (data === '') {
