@@ -60,19 +60,34 @@ class UserServices {
               model: UsersBusiness,
               where: { businessId }
             },
-            attributes: [] // Para excluir las columnas de Business en los resultados de Users
+            attributes: ['id', 'name'] // Incluir solo las columnas necesarias de Business
           }
         ],
         attributes: {
-            exclude: ['password', 'role_id', 'createdAt', 'updatedAt']
-        }
+          exclude: ['password', 'createdAt', 'updatedAt']
+        },
+        raw: true // Obtener resultados como objetos JSON sin instancias de Sequelize
       });
-      return result;
+
+      console.log(result)
+
+      // Mapear el resultado para incluir solo las columnas necesarias y renombrar 'coin'
+      const mappedResult = result.map(user => ({
+        id: user.id,
+        name: user.name,
+        surname: user.surname,
+        email: user.email,
+        roleId: user.roleId,
+        coin: user['business.users_business.coin'] // Renombrar 'coin'
+      }));
+
+      return mappedResult;
     } catch (error) {
       console.log(error);
       throw error;
     }
   }
+
   static async updateUser(id, user) {
     try {
       if (user.hasOwnProperty('password')) {
