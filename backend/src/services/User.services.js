@@ -66,10 +66,9 @@ class UserServices {
         attributes: {
           exclude: ['password', 'createdAt', 'updatedAt']
         },
+        order: [['id', 'DECS']],
         raw: true // Obtener resultados como objetos JSON sin instancias de Sequelize
       });
-
-      console.log(result)
 
       // Mapear el resultado para incluir solo las columnas necesarias y renombrar 'coin'
       const mappedResult = result.map(user => ({
