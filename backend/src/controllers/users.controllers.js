@@ -5,10 +5,10 @@ const template = require('../template/template');
 const createUser = async (req, res, next) => {
   try {
     const body = req.body;
-    const { businessId } = req.params;
+    const businessId = req.params.id;
+    console.log(body, businessId);
     const result = await UserServices.create(body, businessId);
     res.status(201).json(result);
-    console.log(result);
     transporter.sendMail({
       from: 'corporationglya@gmail.com',
       to: result.user.email,

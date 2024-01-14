@@ -1,9 +1,9 @@
-const { InventoryServices } = require('../services');
+const { InventaryServices } = require('../services');
 
-const create = async (req, res, next) => {
+const createRegister = async (req, res, next) => {
   try {
     const body = req.body;
-    const result = await InventoryServices.create(body);
+    const result = await InventaryServices.create(body);
     res.status(201).json(result);
   } catch (error) {
     next({
@@ -14,10 +14,10 @@ const create = async (req, res, next) => {
   }
 };
 
-const getAllInventoryByBusinessId = async (req, res, next) => {
+const getAllInventaryByBusinessId = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await InventoryServices.getAllByBusinessId(id);
+    const result = await InventaryServices.getAllByBusinessId(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -28,11 +28,11 @@ const getAllInventoryByBusinessId = async (req, res, next) => {
   }
 };
 
-const updateInventoryStatus = async (req, res, next) => {
+const updateInventaryStatus = async (req, res, next) => {
   try {
     const id = req.params.id;
     const body = req.body;
-    const result = await InventoryServices.updateInventoryStatus(id, body);
+    const result = await InventaryServices.updateInventaryStatus(id, body);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -43,10 +43,10 @@ const updateInventoryStatus = async (req, res, next) => {
   }
 };
 
-const deleteInventory = async (req, res, next) => {
+const deleteInventary = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await InventoryServices.deleteInventory(id);
+    const result = await InventaryServices.deleteInventary(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -57,4 +57,4 @@ const deleteInventory = async (req, res, next) => {
   }
 };
 
-module.exports = { create, getAllInventoryByBusinessId, updateInventoryStatus, deleteInventory };
+module.exports = { createRegister, getAllInventaryByBusinessId, updateInventaryStatus, deleteInventary };

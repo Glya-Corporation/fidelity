@@ -1,11 +1,11 @@
-const Inventory = () => {
+const Inventary = () => {
   return (
     <main className='background'>
       <Form.Group>
-        <Form.Control type='text' placeholder='Agregar'/>
+        <Form.Control type='text' placeholder='Agregar' />
       </Form.Group>
-    </main>  
-  )
-}
+    </main>
+  );
+};
 
-export default Inventory;
+export default Inventary;

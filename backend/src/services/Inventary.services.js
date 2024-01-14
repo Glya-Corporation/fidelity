@@ -1,9 +1,9 @@
-const { Inventory } = require('../models');
+const { Inventary } = require('../models');
 
-class InventoryServices {
+class InventaryServices {
   static async create(body) {
     try {
-      const result = await Inventory.create(body);
+      const result = await Inventary.create(body);
       return result;
     } catch (error) {
       throw error;
@@ -11,7 +11,7 @@ class InventoryServices {
   }
   static async getAllByBusinessId(businessId) {
     try {
-      const result = await Inventory.findAll({
+      const result = await Inventary.findAll({
         where: { businessId },
         attributes: {
           exclude: ['createdAt', 'updatedAt']
@@ -23,17 +23,17 @@ class InventoryServices {
       throw error;
     }
   }
-  static async updateInventoryStatus(businessid, status) {
+  static async updateInventaryStatus(businessid, status) {
     try {
-      await Inventory.update(status, { where: { businessId } });
+      await Inventary.update(status, { where: { businessId } });
       return { message: 'Usuario actualizado' };
     } catch (error) {
       throw error;
     }
   }
-  static async deleteInventory(id) {
+  static async deleteInventary(id) {
     try {
-      await Inventory.destroy();
+      await Inventary.destroy();
       return { message: 'Usuario eliminado' };
     } catch (error) {
       throw error;
@@ -41,4 +41,4 @@ class InventoryServices {
   }
 }
 
-module.exports = UserServices;
+module.exports = InventaryServices;

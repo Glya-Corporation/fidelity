@@ -6,7 +6,7 @@ import { Form, Button } from 'react-bootstrap';
 
 import ProductModal from '../components/ProductModal.jsx';
 
-import Footer from '../components/Footer.jsx'
+import Footer from '../components/Footer.jsx';
 
 const ListProsucts = () => {
   const [show, setShow] = useState();
@@ -31,6 +31,7 @@ const ListProsucts = () => {
 
   useEffect(() => {
     setProductsAll(products);
+    if (!user.business) navigate('/');
   }, [products]);
 
   const [productSelected, setProductSelected] = useState({});

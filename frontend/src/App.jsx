@@ -22,9 +22,10 @@ function App() {
     location.reload();
   };
 
+
   const hiddeLoader = () => {
     axios
-      .get('https://alfonso.rjgu.es/')
+      .get(apiUrl.slice(0, apiUrl.length - 7))
       .then(() => {
         setTimeout(() => {
           setShowLoader(false);

@@ -10,7 +10,7 @@ const ProductModal = (props) => {
     name: props.data.name,
     coinValue: props.data.coinValue,
     userId: user.id,
-    coinUser: user.business[0].users_business.coin
+    coinUser: user.business?.[0].users_business.coin
   };
   return (
     <Modal {...props} centered>

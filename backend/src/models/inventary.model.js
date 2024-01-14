@@ -1,7 +1,7 @@
 const db = require('../utils/database');
 const { DataTypes } = require('sequelize');
 
-const Inventory = db.define('inventory', {
+const Inventary = db.define('inventary', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -27,4 +27,4 @@ const Inventory = db.define('inventory', {
   }
 });
 
-module.exports = Inventory;
+module.exports = Inventary;
