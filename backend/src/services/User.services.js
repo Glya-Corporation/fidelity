@@ -60,13 +60,13 @@ class UserServices {
               model: UsersBusiness,
               where: { businessId }
             },
+            order: [['id', 'DESC']],
             attributes: ['id', 'name'] // Incluir solo las columnas necesarias de Business
           }
         ],
         attributes: {
           exclude: ['password', 'createdAt', 'updatedAt']
         },
-        order: [['id', 'DESC']],
         raw: true // Obtener resultados como objetos JSON sin instancias de Sequelize
       });
 
