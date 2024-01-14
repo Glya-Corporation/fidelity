@@ -66,7 +66,7 @@ class UserServices {
         attributes: {
           exclude: ['password', 'createdAt', 'updatedAt']
         },
-        order: [['id', 'DECS']],
+        order: [['id', 'DESC']],
         raw: true // Obtener resultados como objetos JSON sin instancias de Sequelize
       });
 
