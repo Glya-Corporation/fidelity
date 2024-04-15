@@ -14,6 +14,7 @@ import exitIcon from './assets/logout.svg';
 import Loader from './components/Loader.jsx';
 import axios from 'axios';
 import apiUrl from './utils/apiUrl.js';
+import Inventary from './pages/Inventary.jsx';
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -54,6 +55,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/list' element={<ListProsucts />} />
           <Route path='/qr' element={<ReadQr />} />
+          <Route path='/inventary' element={<Inventary />} />
         </Route>
       </Routes>
     </HashRouter>

@@ -10,8 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { getUserThunk } from '../store/slices/user.slice';
 import { getProductsThunk } from '../store/slices/product.slice';
 
-import Footer from '../components/Footer.jsx'
-import addIcon from '../assets/add.svg'
+import Footer from '../components/Footer.jsx';
+import addIcon from '../assets/add.svg';
 
 const Home = () => {
   const [showMore, setShowMore] = useState(false);
@@ -46,10 +46,11 @@ const Home = () => {
       {user?.roleId !== 1 && (
         <div className='more-options'>
           <Button variant='success' className='btn-more' onClick={() => setShowMore(!showMore)}>
-            <img src={addIcon} alt="icon add" />
+            <img src={addIcon} alt='icon add' />
           </Button>
           <ul className={showMore ? 'show' : ''}>
             <li onClick={() => navigate('/qr')}>Escanear QR</li>
+            <li onClick={() => navigate('/inventary')}>Inventario</li>
           </ul>
         </div>
       )}
